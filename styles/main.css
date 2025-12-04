@@ -1,0 +1,15 @@
+
+
+header {
+    background-color: aliceblue;
+}
+
+header > * {
+    display: flex;
+    flex-direction: row;
+}
+
+header nav {
+    background-color: red;
+
+}

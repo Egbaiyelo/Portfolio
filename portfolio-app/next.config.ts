@@ -7,4 +7,5 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-export default withNextIntl(nextConfig);
+// export default withNextIntl(nextConfig);
+export default nextConfig;

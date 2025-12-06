@@ -1,5 +1,9 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
-  }
+    "Homepage": {
+        "title": "The Silent Meridian",
+        "content": "English Abstract In the frost-bitten wilderness of the Canadian Rockies, climatologist Dr. Elena Vance discovers a rhythmic seismic pulse originating from deep within a supposedly dormant glacier. As she decodes the signal, she realizes it isn’t a natural phenomenon, but a countdown. When her research station is sabotaged and her team goes missing, Elena must flee across the tundra to protect her data. With a shadowy private military firm on her heels and a catastrophic geological event looming, she discovers that the 'meridian' is actually a bridge to a forgotten history—one that humanity was never meant to wake."
+    },
+    "About": {
+        "title": "Hello"
+    }
 }

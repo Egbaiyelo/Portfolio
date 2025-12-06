@@ -1,6 +1,8 @@
 export default function Nav() {
     // icon           about  projects publications resume  fr/en  contact
     // maybe contact button glimmers when getting to the technical skills section
+
+    // when width smaller, only icon and contact remain
     return (
         <nav style={{ marginTop: '2rem', padding: '1rem', borderTop: '1px solid #ccc', textAlign: 'center' }}>
             <div>

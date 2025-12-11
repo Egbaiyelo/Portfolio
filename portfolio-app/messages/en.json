@@ -5,5 +5,12 @@
     },
     "About": {
         "title": "Hello"
+    },
+    "Nav": {
+        "about": "About",
+        "projects": "Projects",
+        "publications": "Publications",
+        "resume": "Resume",
+        "contact-me": "Contact me!"
     }
 }

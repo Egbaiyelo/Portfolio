@@ -45,15 +45,14 @@ export default async function RootLayout({
   }
   setRequestLocale(locale);
   const messages = await getMessages({ locale })
-console.log('ACTIVE LOCALE:', locale);
-console.log('ACTIVE MESSAGES:', messages);
+// console.log('ACTIVE LOCALE:', locale);
+// console.log('ACTIVE MESSAGES:', messages);
   return (
     <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
-        {/* {children} */}
       </body>
     </html>
   );

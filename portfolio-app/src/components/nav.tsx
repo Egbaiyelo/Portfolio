@@ -22,6 +22,7 @@ export default async function Nav() {
 
             {/* directions - about... */}
             <ul className="flex mx-auto gap-4 flex-1 justify-center bg-blue-500">
+                <li><Link href="/">{t('overview')}</Link></li>
                 <li><Link href="/about">{t('about')}</Link></li>
                 <li><Link href="/projects">{t('projects')}</Link></li>
                 <li><Link href="/publications">{t('publications')}</Link></li>

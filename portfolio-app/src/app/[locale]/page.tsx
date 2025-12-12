@@ -1,6 +1,4 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import LocaleSwitcher from '@/components/LocaleSwitcher';
-
 
 export const dynamic = 'force-static';
 // export const revalidate = false;

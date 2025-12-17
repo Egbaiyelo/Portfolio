@@ -1,4 +1,5 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
+import Image from "next/image";
 
 export const dynamic = 'force-static';
 // export const revalidate = false;
@@ -31,36 +32,74 @@ export default async function Home({
 
       {/* <!-- Each section has link to it and a link to its more detailed page --> */}
       {/* <!-- About me --> */}
+
+
       <section className='text-white border-t border-white/20'>
         <h2>About me</h2>
 
         {/* Container */}
-        <div className='grid grid-cols-1 md:grid-cols-12 w-full'>
+        <div className='grid grid-cols-12 w-full'>
 
           {/* What I do */}
-          <div>
+          <div className='col-span-12 border-b md:border-b-0 md:border-r border-white/20 p-8 flex flex-row  justify-center '>
 
-            <div>
-              {/* icons  */}
-              Full stack developer
+            <div className='col-span-6 md:col-span-4 border-b border-r border-white/20 p-8 '>
+              <span className='flex [&>*]:mr-3'>
+                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+              </span>
+
+              <strong>Full Stack Developer</strong>
+
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
-            <div>
-              systems engineer
+            <div className='col-span-6 md:col-span-4 border-b border-r md:border-r border-white/20 p-8'>
+
+              <strong>Systems Engineer</strong>
+
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
-            <div>
-              embedded systems
+            <div className='col-span-12 md:col-span-4 border-b md:border-r-0 border-white/20 p-8'>
+              <strong>Embedded Systems</strong>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </div>
 
           {/* Education */}
-          <div>
-            Trent
-            {/* specializations, background in geo */}
+          <div className='col-span-12 grid grid-cols-12'>
+
+            {/* School Logo */}
+            <div className='col-span-2 '>
+              <Image src={"/white-icons/white-icon.png"} alt='' 
+              className='mx-auto my-auto' width={120} height={120} />
+            </div>
+
+            <div className='col-span-8'>
+              <p className='flex justify-between'><span>B.Sc Computer Science</span><span>2021-2025</span></p>
+
+              {/* specializations, background in geo */}
+              Specialization in Software engineering and theoretical computing
+              with a background in mathematics (graphs, probability)
+              and Geography (ArcGIS, mapping, satellite data)
+            </div>
+
+            <div className='col-span-2'>
+              <div>
+                <Image src={"/white-icons/white-icon.png"} alt='' width={45} height={45} />
+              </div>
+              <div>
+                1+ year of professional software experience
+              </div>
+            </div>
+
           </div>
 
-          {/* Based in Ontario, can relocate in Canada */}
+          {/* Where I am based */}
+          {/* Based in Ontario, can relocate in Canada, french/english */}
 
-          {/* Favourite lang, interests */}
+          {/* Interests */}
+          {/* Favourite lang (C# ASP.NET), interests (HPC,)*/}
 
 
         </div>

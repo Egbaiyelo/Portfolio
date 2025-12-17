@@ -22,12 +22,15 @@ export default async function Nav() {
 
             {/* directions - about... */}
             {/*+ Becomes hamburger when small */}
-            <ul className="flex mx-auto gap-4 flex-1 justify-center bg-blue-500">
+            <ul className="flex mx-auto gap-4 flex-1 justify-center">
                 <li><Link href="/">{t('overview')}</Link></li>
                 {/* <li><Link href="/about">{t('about')}</Link></li> */}
                 {/* <li><Link href="/projects">{t('projects')}</Link></li> */}
                 {/* <li><Link href="/publications">{t('publications')}</Link></li> */}
                 {/* <li><Link href="/resume">{t('resume')}</Link></li> */}
+
+                {/* Terminal - link to terminal games and apps maybe like tetris and Monopoly */}
+                {/* Other ways to showcase projects */}
             </ul>
 
             {/* localeswitcher */}

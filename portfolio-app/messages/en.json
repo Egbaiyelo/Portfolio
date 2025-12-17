@@ -13,5 +13,12 @@
         "publications": "Publications",
         "resume": "Resume",
         "contact-me": "Contact me!"
+    },
+    "Footer": {
+        "contacts": "Contacts",
+        "Documents": "Documents",
+        "Resume": "Resume",
+        "CV": "CV",
+        "Socials": "Socials"
     }
 }

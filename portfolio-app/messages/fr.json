@@ -11,7 +11,14 @@
         "about": "À propos",
         "projects": "Projets",
         "publications": "Publications",
-        "resume": "CV",
+        "resume": "Résumé",
         "contact-me": "contactez-moi!"
+    },
+    "Footer": {
+        "contacts": "Contacts",
+        "Documents": "Documents",
+        "Resume": "Résumé",
+        "CV": "CV",
+        "Socials": "Réseaux sociaux"
     }
 }

@@ -67,12 +67,12 @@ export default async function Home({
           </div>
 
           {/* Education */}
-          <div className='col-span-12 grid grid-cols-12'>
+          <div className='col-span-12 grid grid-cols-12 border-b  md:border-r border-white/20 p-8'>
 
             {/* School Logo */}
             <div className='col-span-2 '>
-              <Image src={"/white-icons/white-icon.png"} alt='' 
-              className='mx-auto my-auto' width={120} height={120} />
+              <Image src={"/white-icons/white-icon.png"} alt=''
+                className='mx-auto my-auto' width={120} height={120} />
             </div>
 
             <div className='col-span-8'>
@@ -84,15 +84,49 @@ export default async function Home({
               and Geography (ArcGIS, mapping, satellite data)
             </div>
 
-            <div className='col-span-2'>
+            <div className='col-span-2 [&>*]:mx-auto'>
               <div>
-                <Image src={"/white-icons/white-icon.png"} alt='' width={45} height={45} />
+                <Image src={"/white-icons/white-icon.png"} alt=''     width={45} height={45} />
               </div>
               <div>
                 1+ year of professional software experience
               </div>
             </div>
 
+          </div>
+
+          {/* Misc */}
+          <div className='col-span-12 grid grid-cols-12'>
+
+            <div className='col-span-3'>
+              <Image src={"/white-icons/white-icon.png"} alt='' width={45} height={45} />
+              Based in Ontario
+              Willing to relocate in Canada
+            </div>
+            
+            <div className='col-span-3'>
+              based in Mississauga, GTA
+            </div>
+
+            <div className='col-span-3'>
+              Languages
+
+              <div>
+                English Fluent/Native
+              </div>
+              
+              <div>
+                French B1/B2 Proficiency
+              </div>
+              
+            </div>
+
+            <div className='col-span-3'>
+              Key languages 
+              C#, C++, JS, TS
+            </div>
+
+            
           </div>
 
           {/* Where I am based */}
@@ -116,24 +150,22 @@ export default async function Home({
         {/* <!-- maybe sum all the skills and then have them split in the skills page */}
         {/* just so its smaller on the main page --> */}
         <h2>Code and craft</h2>
+        <p>In some order of proficiency</p>
 
         <div>
           <h3>Languages</h3>
           <p>Webdev: HTML, CSS</p>
           {/* <!-- Languages I am fluent in and use often --> */}
-          <p>Core: C#, Java, Python, JavaScript/Typescript, C++</p>
+          <p>Core: JavaScript/Typescript, C#, Python, C++</p>
           {/* <!-- Languages I am literate in and interested in mastering --> */}
-          {/* <p>Others: Rust, Bash, Go, C, erlang, gleam</p> */}
+          {/* <p>Others: Rust, Go, Java</p> */}
         </div>
 
         <div>
           <h3>Frameworks and Libraries</h3>
-          <p>Web development: React, Next, Vue</p>
-
-          <p>NodeJS, ASP.NET</p>
-          <p>Cross-platform: Electron</p>
-          <p>Backend: Express, Flask</p>
-          <p>Postgres, MongoDB</p>
+          <p>Web development: React, Next, Vue, NodeJS, ASP.NET</p>
+          <p>Postgres, MongoDB, Electron, Express, Flask</p>
+          <p></p>
         </div>
 
         <div>

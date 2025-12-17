@@ -31,14 +31,38 @@ export default async function Home({
 
       {/* <!-- Each section has link to it and a link to its more detailed page --> */}
       {/* <!-- About me --> */}
-      <section>
+      <section className='text-white border-t border-white/20'>
         <h2>About me</h2>
 
-        <div>
-          Full stack developer
-        </div>
-        <div>
-          systems engineer
+        {/* Container */}
+        <div className='grid grid-cols-1 md:grid-cols-12 w-full'>
+
+          {/* What I do */}
+          <div>
+
+            <div>
+              {/* icons  */}
+              Full stack developer
+            </div>
+            <div>
+              systems engineer
+            </div>
+            <div>
+              embedded systems
+            </div>
+          </div>
+
+          {/* Education */}
+          <div>
+            Trent
+            {/* specializations, background in geo */}
+          </div>
+
+          {/* Based in Ontario, can relocate in Canada */}
+
+          {/* Favourite lang, interests */}
+
+
         </div>
 
         {/* <!-- simple poster board of me --> */}
@@ -66,7 +90,7 @@ export default async function Home({
         <div>
           <h3>Frameworks and Libraries</h3>
           <p>Web development: React, Next, Vue</p>
-          
+
           <p>NodeJS, ASP.NET</p>
           <p>Cross-platform: Electron</p>
           <p>Backend: Express, Flask</p>

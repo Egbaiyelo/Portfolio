@@ -16,9 +16,9 @@
     },
     "Footer": {
         "contacts": "Contacts",
-        "Documents": "Documents",
-        "Resume": "Resume",
-        "CV": "CV",
-        "Socials": "Socials"
+        "documents": "Documents",
+        "resume": "Resume",
+        "cv": "CV",
+        "socials": "Socials"
     }
 }

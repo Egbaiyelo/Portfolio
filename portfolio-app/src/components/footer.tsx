@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 
 export default async function Footer() {
 
-  const t = await getTranslations('Nav');
+  const t = await getTranslations('Footer');
 
   return (
     <footer className="m-4 flex flex-row justify-between [&>*]:pb-4 m-8 p-7 border-t border-solid border-[#ccc]" >
@@ -13,20 +13,24 @@ export default async function Footer() {
       {/* email, number, 
       github, linkedin, discord, medium */}
 
+
+      {/*+ Internationalize alt tags, names, etc */}
+      {/*+ Git hooks for en/fr matching */}
+
       <div>
         <p>© {new Date().getFullYear()} Egbaiyelo Moteniola</p>
       </div>
 
       <div className="flex flex-col">
-        <strong>Documents</strong>
+        <strong>{t('documents')}</strong>
 
-        <a href="/documents/Resume_Egbaiyelo_Moteniola_Software_Developer.pdf" download={"Egbaiyelo_Moteniola_Resume.pdf"}>Resume</a>
-        <a href="/documnets/Egbaiyelo_Moteniola_CV.pdf" download={"Egbaiyelo_Moteniola_CV.pdf"}>CV</a>
+        <a href="/documents/Resume_Egbaiyelo_Moteniola_Software_Developer.pdf" download={"Egbaiyelo_Moteniola_Resume.pdf"}>{t('resume')}</a>
+        <a href="/documnets/Egbaiyelo_Moteniola_CV.pdf" download={"Egbaiyelo_Moteniola_CV.pdf"}>{t('cv')}</a>
       </div>
 
 
       <div className="flex flex-col items-start">
-        <strong>Contacts</strong>
+        <strong>{t('contacts')}</strong>
 
         {/*+ add to clipboard function */}
 
@@ -38,7 +42,7 @@ export default async function Footer() {
       </div>
 
       <div className="flex flex-col items-start">
-        <strong>Socials</strong>
+        <strong>{t('socials')}</strong>
 
 
         <div className="flex flex-row">

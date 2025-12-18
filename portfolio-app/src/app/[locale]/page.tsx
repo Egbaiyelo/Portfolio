@@ -36,6 +36,9 @@ export default async function Home({
       <section className='text-white border-t border-white/20'>
         <h2 className='text-xl font-semibold mb-8 ml-16'>About me Board</h2>
 
+
+        {/* <div className='w-full py-10 px-4'>proficiencies</div> */}
+
         {/* Container */}
         {/*+ When hover add colour to div */}
         <div className='grid grid-cols-12 w-full'>
@@ -69,9 +72,7 @@ export default async function Home({
 
               <strong>Systems Engineer</strong>
 
-              <p>Secure fast and reliable</p>
-
-              
+              <p>Architecting secure, reliable, and performant digital ecosystems with optimized tools and services.</p>
 
             </div>
 
@@ -84,7 +85,7 @@ export default async function Home({
               </span>
 
               <strong>Software engineer</strong>
-              <p>usable, accessible, productive</p>
+              <p>Developing usable, efficient, and scalable software solutions that prioritize user experience.</p>
             </div>
           </div>
 

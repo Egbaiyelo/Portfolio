@@ -46,39 +46,45 @@ export default async function Home({
             {/* React, nodejs, tailwind, asp.net, js */}
             <div className='col-span-6 md:col-span-4 border-b border-r border-white/20 p-8 '>
               <span className='flex [&>*]:mr-3'>
-                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/react.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/nodejs.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/tailwind.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/dotnet.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/js.png" alt="icon" className='mb-3' width={20} height={20} />
               </span>
 
               <strong>Full Stack Developer</strong>
 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              <p>Building scalable, user-centric applications with strong back-end logic and intuitive front-end design</p>
             </div>
 
             {/* C++, docker, linux, container */}
             <div className='col-span-6 md:col-span-4 border-b border-r md:border-r border-white/20 p-8'>
               <span className='flex [&>*]:mr-3'>
-                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/linux.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/cplusplus.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/docker.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/python.png" alt="icon" className='mb-3' width={20} height={20} />
               </span>
 
               <strong>Systems Engineer</strong>
 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              <p>Secure fast and reliable</p>
+
+              
+
             </div>
 
             {/* js, ts, c#, */}
             <div className='col-span-12 md:col-span-4 border-b md:border-r-0 border-white/20 p-8'>
               <span className='flex [&>*]:mr-3'>
-                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/csharp.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/about-icons/typescript.png" alt="icon" className='mb-3' width={20} height={20} />
+                {/* <Image src="/about-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} /> */}
               </span>
 
               <strong>Software engineer</strong>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              <p>usable, accessible, productive</p>
             </div>
           </div>
 
@@ -116,11 +122,11 @@ export default async function Home({
 
             <div className='col-span-3 p-8'>
               <Image src={"/canada-ontario.png"} alt='' width={100} height={100} />
-              Based in Ontario
-              Willing to relocate in Canada
             </div>
 
             <div className='col-span-3 p-8'>
+              Based in Ontario
+              Willing to relocate in Canada
               based in Mississauga, GTA
             </div>
 

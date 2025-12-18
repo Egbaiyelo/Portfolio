@@ -1,5 +1,13 @@
 
+# Temp files
 *.temp.*
 
+# Idea screenshots from other sites
 screenshots/
+
+# Resume and CV
 **/documents/*
+
+# 
+.git
+.vscode/

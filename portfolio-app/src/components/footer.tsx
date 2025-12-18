@@ -50,7 +50,7 @@ export default async function Footer() {
             <Image src="/white-icons/white-discord.png" alt="Discord link" width={45} height={45} />
           </a>
           <a href="https://github.com/" target="_blank" >
-            <Image src="/white-icons/white-github.png" alt="Github link" width={45} height={45} />
+            <Image className="p-1.5" src="/white-icons/white-github.png" alt="Github link" width={45} height={45} />
           </a>
           <a href="https://www.linkedin.com/in/" target="_blank" >
             <Image src="/white-icons/white-linkedin.png" alt="Linkedin link" width={45} height={45} />

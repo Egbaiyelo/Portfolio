@@ -6,7 +6,6 @@ export const dynamic = 'force-static';
 
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
-// import { useTranslations } from 'next-intl';
 
 export default async function Home({
   params
@@ -35,14 +34,16 @@ export default async function Home({
 
 
       <section className='text-white border-t border-white/20'>
-        <h2>About me</h2>
+        <h2 className='text-xl font-semibold mb-8 ml-16'>About me Board</h2>
 
         {/* Container */}
+        {/*+ When hover add colour to div */}
         <div className='grid grid-cols-12 w-full'>
 
           {/* What I do */}
           <div className='col-span-12 border-b md:border-b-0 md:border-r border-white/20 p-8 flex flex-row  justify-center '>
 
+            {/* React, nodejs, tailwind, asp.net, js */}
             <div className='col-span-6 md:col-span-4 border-b border-r border-white/20 p-8 '>
               <span className='flex [&>*]:mr-3'>
                 <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
@@ -54,39 +55,54 @@ export default async function Home({
 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
+
+            {/* C++, docker, linux, container */}
             <div className='col-span-6 md:col-span-4 border-b border-r md:border-r border-white/20 p-8'>
+              <span className='flex [&>*]:mr-3'>
+                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+              </span>
 
               <strong>Systems Engineer</strong>
 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
+
+            {/* js, ts, c#, */}
             <div className='col-span-12 md:col-span-4 border-b md:border-r-0 border-white/20 p-8'>
-              <strong>Embedded Systems</strong>
+              <span className='flex [&>*]:mr-3'>
+                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+                <Image src="/white-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} />
+              </span>
+
+              <strong>Software engineer</strong>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </div>
 
-          {/* Education */}
+          {/* Education and experience */}
           <div className='col-span-12 grid grid-cols-12 border-b  md:border-r border-white/20 p-8'>
 
             {/* School Logo */}
-            <div className='col-span-2 '>
+            <div className='col-span-2 p-8'>
               <Image src={"/white-icons/white-icon.png"} alt=''
                 className='mx-auto my-auto' width={120} height={120} />
             </div>
 
-            <div className='col-span-8'>
+            <div className='col-span-8 p-8'>
               <p className='flex justify-between'><span>B.Sc Computer Science</span><span>2021-2025</span></p>
 
               {/* specializations, background in geo */}
-              Specialization in Software engineering and theoretical computing
-              with a background in mathematics (graphs, probability)
-              and Geography (ArcGIS, mapping, satellite data)
+              <p>Specialization in Software engineering and theoretical computing</p>
+              <p>with a background in mathematics (graphs, probability)</p>
+              <p>and Geography (ArcGIS, mapping, satellite data)</p>
             </div>
 
-            <div className='col-span-2 [&>*]:mx-auto'>
+            <div className='col-span-2 [&>*]:mx-auto p-8'>
               <div>
-                <Image src={"/white-icons/white-icon.png"} alt=''     width={45} height={45} />
+                <Image src={"/white-icons/white-icon.png"} alt='' width={45} height={45} />
               </div>
               <div>
                 1+ year of professional software experience
@@ -96,37 +112,37 @@ export default async function Home({
           </div>
 
           {/* Misc */}
-          <div className='col-span-12 grid grid-cols-12'>
+          <div className='col-span-12 grid grid-cols-12 p-8'>
 
-            <div className='col-span-3'>
-              <Image src={"/white-icons/white-icon.png"} alt='' width={45} height={45} />
+            <div className='col-span-3 p-8'>
+              <Image src={"/canada-ontario.png"} alt='' width={100} height={100} />
               Based in Ontario
               Willing to relocate in Canada
             </div>
-            
-            <div className='col-span-3'>
+
+            <div className='col-span-3 p-8'>
               based in Mississauga, GTA
             </div>
 
-            <div className='col-span-3'>
+            <div className='col-span-3 p-8'>
               Languages
 
               <div>
                 English Fluent/Native
               </div>
-              
+
               <div>
                 French B1/B2 Proficiency
               </div>
-              
+
             </div>
 
-            <div className='col-span-3'>
-              Key languages 
+            <div className='col-span-3 p-8'>
+              Key languages
               C#, C++, JS, TS
             </div>
 
-            
+
           </div>
 
           {/* Where I am based */}

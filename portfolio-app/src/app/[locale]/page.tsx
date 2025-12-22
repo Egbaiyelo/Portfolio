@@ -98,7 +98,7 @@ export default async function Home({
                 className='mx-auto my-auto' width={120} height={120} />
             </div>
 
-            <div className='col-span-8 p-8'>
+            <div className='col-span-4 p-8'>
               <p className='flex justify-between'><span>B.Sc Computer Science</span><span>2021-2025</span></p>
 
               {/* specializations, background in geo */}
@@ -107,13 +107,23 @@ export default async function Home({
               <p>and Geography (ArcGIS, mapping, satellite data)</p>
             </div>
 
-            <div className='col-span-2 [&>*]:mx-auto p-8'>
+            <div className='col-span-4 [&>*]:mx-auto p-8'>
               <div>
                 <Image src={"/white-icons/white-icon.png"} alt='' width={45} height={45} />
               </div>
               <div>
                 1+ year of professional software experience
+                <p>hireddd.com</p>
+                <p>Trent Computer science Department</p>
+                <p>Trent Careerspace</p>
               </div>
+            </div>
+
+            <div className='col-span-2 p-8 flex flex-wrap object-cover'>
+              <Image src={"/about-icons/careerspace.png"} alt='' width={45} height={45} />
+              <Image src={"/about-icons/hireddd.png"} alt='' width={45} height={45} />
+              <Image className='bg-white' src={"/about-icons/cois.png"} alt='' width={45} height={45} />
+
             </div>
 
           </div>
@@ -172,8 +182,13 @@ export default async function Home({
       <section>
         {/* <!-- maybe sum all the skills and then have them split in the skills page */}
         {/* just so its smaller on the main page --> */}
-        <h2>Code and craft</h2>
+        <h2>My Skills</h2>
         <p>In some order of proficiency</p>
+
+        {/*+ or maybe make tree graphs somethings connect to multiple */}
+
+        <div className=''>Language</div>
+
 
         <div>
           <h3>Languages</h3>
@@ -186,9 +201,30 @@ export default async function Home({
 
         <div>
           <h3>Frameworks and Libraries</h3>
-          <p>Web development: React, Next, Vue, NodeJS, ASP.NET</p>
-          <p>Postgres, MongoDB, Electron, Express, Flask</p>
-          <p></p>
+          <div> <h4>Web development</h4>
+
+            <div>
+              <Image src={"./about-icons/tailwind.png"} alt='tailwind' height={45} width={45}></Image>
+              <p>Tilwind</p>
+            </div>
+            <div>
+              <Image src={"./about-icons/react.png"} alt='' height={45} width={45}></Image>
+              <p>React</p>
+            </div>
+            <div>
+              <Image src={"./about-icons/nodejs.png"} alt='' height={45} width={45}></Image>
+              <p>NodeJS</p>
+            </div>
+            <div>
+              <Image src={"./about-icons/nextjs.png"} alt='' height={45} width={45}></Image>
+              <p>NextJS</p>
+            </div>
+            <div>
+              <Image src={"./about-icons/nextjs.png"} alt='' height={45} width={45}></Image>
+              <p>ASP.NET</p>
+            </div>
+          </div>
+          <p>Postgres, MongoDB, Electron, Express</p>
         </div>
 
         <div>
@@ -200,13 +236,41 @@ export default async function Home({
 
       <section>
         <h2>Experiences</h2>
-        <div></div>
+
+        <div>
+          <h3>01 - web developer</h3>
+          <p>school placement</p>
+          <div>react, mongodb, express, js, nodejs, puppeteer</div>
+        </div>
+
+        <div>
+          <h3>02 - Technical assisstant (co-op)</h3>
+          <p>Worked with the school's careerspace department</p>
+          <div>drupal, html, css, cdn, canva</div>
+        </div>
+
+        <div>
+          <h3>03 - Grading assisstant (academic)</h3>
+          <p>I was a grading assisstant for the Trent University Computer science department. Curating works of 100+ students across 3 term projects</p>
+          <div>js, apis, typescript, html, css, tailwind</div> //the bubble-text thingy
+        </div>
+
+
       </section>
 
       {/* <!-- Projects --> */}
       <section>
         <h2>Projects</h2>
-        <div>Coming soon</div>
+        <div>File services --     redis, apis, asp.net, micorservices, docker</div> swe, sys, fstack
+        <div>Monopoly console --  TUI, gameengine, </div> swe, sys
+        <div>Portfolio --         Uses internationalisation, git hooks, github actions, nextjs, graphics </div> fstack
+        <div>Browser extension -- extension, chrome apis</div> fstack
+        <div>MyWorkday --         nativemessaging, extension, web scraping, </div> fstack, swe
+
+        <div>compression</div>
+        <div>graphics</div>
+        <div>graphics maths lib</div>
+
       </section>
 
       {/* <!-- References --> */}

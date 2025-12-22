@@ -11,3 +11,7 @@ screenshots/
 # 
 .git
 .vscode/
+
+
+**/components/component.css
+**/components/interface.tsx

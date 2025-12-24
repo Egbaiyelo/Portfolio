@@ -6,6 +6,7 @@ export const dynamic = 'force-static';
 
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
+import ProjectCard from '@/components/projectCard';
 
 export default async function Home({
   params
@@ -105,6 +106,7 @@ export default async function Home({
               <p>Specialization in Software engineering and theoretical computing</p>
               <p>with a background in mathematics (graphs, probability)</p>
               <p>and Geography (ArcGIS, mapping, satellite data)</p>
+              3.9 GPA
             </div>
 
             <div className='col-span-4 [&>*]:mx-auto p-8'>
@@ -270,8 +272,17 @@ export default async function Home({
         <div>compression</div>
         <div>graphics</div>
         <div>graphics maths lib</div>
+        <div>Basalt</div>
 
       </section>
+
+      <ProjectCard
+        images={[""]}
+        heading='Heading'
+        description='owjf wfiaw  awifojage rgrjioar gwaeiog eagroig earjog eagoi er'
+        link=''
+        tags={["nodejs", "cplusplus", "rust", "apis", "csharp", "trent"]}
+      />
 
       {/* <!-- References --> */}
       {/* <section>

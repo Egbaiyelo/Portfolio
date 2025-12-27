@@ -3,16 +3,16 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
 interface ProjectProps {
-//   projectKey: string,
+    //   projectKey: string, // for intl
 
-  images: string[];
-  link: string;
-  heading: string;
-  description: string;
-  tags: string[];
+    images: string[];
+    link: string;
+    heading: string;
+    description: string;
+    tags: string[];
 }
 
-export default async function ProjectCard( { images, link, heading, description, tags }: ProjectProps) {
+export default async function ProjectCard({ images, link, heading, description, tags }: ProjectProps) {
 
     // how to do translation? all projects or each with specific one
     const t = await getTranslations('Nav');
@@ -23,14 +23,19 @@ export default async function ProjectCard( { images, link, heading, description,
             {/* image - extension, game, webapp etc */}
             <div className='flex justify-between items-start'>
 
-                <div className='bg-[#BFC3C9] p-3 rounded-2xl'>
-                    <Image src={"/white-icons/white-icon.png"} alt='' width={32} height={32} />
+                <div className='bg-[#BFC3C9] p-3 rounded-2xl flex space-x-4'>
+                    {images.map((imageSrc) => (
+                        <Image className='object-cover' src={imageSrc} alt='project-icon' width={32} height={32} />
+                    ))}
+                    {/* <Image src={"/white-icons/white-icon.png"} alt='' width={32} height={32} /> */}
                 </div>
 
                 {/* Link to repo (if any) */}
-                <div className='p-2 rounded-full cursor-pointer hover:bg-gray-400 transition'>
-                    <a href=""><Image src={"/open-link.png"} alt='' width={25} height={25} /></a>
-                </div>
+                {link && (
+                    <div className='p-2 rounded-full cursor-pointer hover:bg-gray-400 transition'>
+                        <a href={link} target="_blank" rel='noopener noreferrer'><Image src={"/open-link.png"} alt='' width={25} height={25} /></a>
+                    </div>
+                )}
             </div>
 
             {/* Heading and description */}

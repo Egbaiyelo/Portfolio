@@ -19,6 +19,13 @@ export default async function Home({
 
   const t = await getTranslations('Homepage');
 
+
+  const skillGroups = [
+    { title: "Languages", skills: ["TypeScript", "Rust", "C++", "Python"] },
+    { title: "Frontend", skills: ["React", "Next.js", "Tailwind", "Framer Motion"] },
+    { title: "Backend", skills: ["Node.js", "PostgreSQL", "Redis", "gRPC"] }
+  ];
+
   return (
     <div>
       <Nav />
@@ -276,18 +283,52 @@ export default async function Home({
 
       </section>
 
-      <ProjectCard
-        images={[""]}
-        heading='Heading'
-        description='owjf wfiaw  awifojage rgrjioar gwaeiog eagroig earjog eagoi er'
-        link=''
-        tags={["nodejs", "cplusplus", "rust", "apis", "csharp", "trent"]}
-      />
+      <section>
+        <h2>Projects</h2>
+        <div className='flex flex-wrap flex-row'>
+          <ProjectCard
+            images={[""]}
+            heading='File Service'
+            description='owjf wfiaw  awifojage rgrjioar gwaeiog eagroig earjog eagoi er'
+            link=''
+            tags={["nodejs", "microservice", "docker", "apis"]}
+          />
+          <ProjectCard
+            images={["/extension.png"]} // extension
+            heading='Browser-data extension'
+            description='My browser extension'
+            link=''
+            tags={["extension", "chromeapis", "js"]}
+          />
+          <ProjectCard
+            images={["/internet.png", "/extension.png"]} // webapp
+            heading='Portfolio'
+            description='My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface'
+            link=''
+            tags={["nextjs", "intl", "graphics", "typescript"]}
+          />
+        </div>
+      </section>
 
       {/* <!-- References --> */}
       {/* <section>
         <h2>Endorsements</h2>
       </section> */}
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+        {skillGroups.map((group) => (
+          <div key={group.title} className="bg-[#D1D5DB] p-6 rounded-[2rem] space-y-4">
+            <h3 className="text-xl font-bold opacity-80">{group.title}</h3>
+            <div className="flex flex-wrap gap-2">
+              {group.skills.map(skill => (
+                <span key={skill} className="px-3 py-1 bg-[#BFC3C9] rounded-full text-sm font-medium">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
 
       <Footer />
     </div>

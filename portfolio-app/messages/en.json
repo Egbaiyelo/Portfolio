@@ -20,5 +20,15 @@
         "resume": "Resume",
         "cv": "CV",
         "socials": "Socials"
+    },
+    "Projects": {
+        "file-service": {
+            "title": "title",
+            "description": "description"
+        },
+        "browser-extension": {
+            "title": "title",
+            "description": "description"
+        }
     }
 }

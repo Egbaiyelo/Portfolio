@@ -15,7 +15,7 @@ interface ProjectProps {
 export default async function ProjectCard({ images, link, heading, description, tags }: ProjectProps) {
 
     // how to do translation? all projects or each with specific one
-    const t = await getTranslations('Nav');
+    const t = await getTranslations('Projects');
 
     return (
         <div className='bg-[#D1D5DB] text-black rounded-[2rem] p-8 flex flex-col gap-6 max-w-sm'>

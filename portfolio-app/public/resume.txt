@@ -1,0 +1,10 @@
+================================================
+           JOHN DOE - FULLSTACK DEVELOPER
+================================================
+> STACK: React, Node.js, Rust, Tailwind
+> GITHUB: github.com/yourusername
+> STATUS: Open for projects
+
+"The best way to predict the future is to 
+ implement it."
+================================================

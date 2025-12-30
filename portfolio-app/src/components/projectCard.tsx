@@ -24,10 +24,28 @@ export default async function ProjectCard({ images, link, heading, description, 
             <div className='flex justify-between items-start'>
 
                 <div className='bg-[#BFC3C9] p-3 rounded-2xl flex space-x-4'>
-                    {images.map((imageSrc) => (
-                        <Image className='object-cover' src={imageSrc} alt='project-icon' width={32} height={32} />
-                    ))}
+
+                    {images && images.length > 0 ? (images.map((imageSrc, index) => (
+                        <Image
+                            key={index}
+                            className='object-cover'
+                            src={imageSrc}
+                            alt='project-icon'
+                            width={32} height={32}
+                            // default here too
+                            // onError={(e) => e.currentTarget.src = "/white-icons/white-icon.png"}
+                        />
+                    ))
+                    ) : (
+                        // default down here (a project icon) and up there too
+                        <Image
+                            src={"/white-icons/white-icon.png"}
+                            alt=''
+                            width={32} height={32}
+                        />
+                    )}
                     {/* <Image src={"/white-icons/white-icon.png"} alt='' width={32} height={32} /> */}
+
                 </div>
 
                 {/* Link to repo (if any) */}

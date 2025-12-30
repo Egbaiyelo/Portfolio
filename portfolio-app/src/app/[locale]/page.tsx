@@ -287,7 +287,7 @@ export default async function Home({
         <h2>Projects</h2>
         <div className='flex flex-wrap flex-row'>
           <ProjectCard
-            images={[""]}
+            images={[]}
             heading='File Service'
             description='owjf wfiaw  awifojage rgrjioar gwaeiog eagroig earjog eagoi er'
             link=''

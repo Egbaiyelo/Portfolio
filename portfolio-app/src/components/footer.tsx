@@ -2,6 +2,10 @@ import Image from "next/image";
 import { getTranslations } from 'next-intl/server';
 import { Link } from "@/i18n/navigation";
 
+function copyToClipboard() {
+
+}
+
 export default async function Footer() {
 
   const t = await getTranslations('Footer');
@@ -33,9 +37,13 @@ export default async function Footer() {
         <strong>{t('contacts')}</strong>
 
         {/*+ add to clipboard function */}
+        {/*+ switch all to soft then back to hard graphics style */}
 
         {/* email */}
-        <a href="mailto:moteniola.egbaiyelo@gmail.com">moteniola.egbaiyelo@gmail.com</a>
+        <div className="flex">
+          <a href="mailto:moteniola.egbaiyelo@gmail.com">moteniola.egbaiyelo@gmail.com</a>
+          <a href=""><Image src={"/white-icons/white-copy.png"} alt="" width={10} height={10}/></a>
+        </div>
 
         {/* telephone */}
         <a href="tel:+17058081912"> +1 (705) 808 1912</a>

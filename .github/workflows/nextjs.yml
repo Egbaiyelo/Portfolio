@@ -28,11 +28,14 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./portfolio-app
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
-        id: detect-package-manager
+        id: detect-package-manager  
         run: |
           if [ -f "${{ github.workspace }}/portfolio-app/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
@@ -53,6 +56,7 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache-dependency-path: ./portfolio-app/package-lock.json
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
@@ -78,7 +82,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./portfolio-app/out
 
   # Deployment job
   deploy:

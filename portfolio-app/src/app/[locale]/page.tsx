@@ -7,6 +7,7 @@ export const dynamic = 'force-static';
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
 import ProjectCard from '@/components/projectCard';
+import TechSkill from '@/components/tools';
 
 export default async function Home({
   params
@@ -226,7 +227,6 @@ export default async function Home({
 
         <div className=''>Language</div>
 
-
         <div>
           <h3>Languages</h3>
           <p>Webdev: HTML, CSS</p>
@@ -295,26 +295,10 @@ export default async function Home({
 
       </section>
 
-      {/* <!-- Projects --> */}
-      <section>
-        <h2>Projects</h2>
-        <div>File services --     redis, apis, asp.net, micorservices, docker</div> swe, sys, fstack
-        <div>Monopoly console --  TUI, gameengine, </div> swe, sys
-        <div>Portfolio --         Uses internationalisation, git hooks, github actions, nextjs, graphics </div> fstack
-        <div>Browser extension -- extension, chrome apis</div> fstack
-        <div>MyWorkday --         nativemessaging, extension, web scraping, </div> fstack, swe
-
-        <div>compression</div>
-        <div>graphics</div>
-        <div>graphics maths lib</div>
-        <div>Basalt</div>
-
-      </section>
-
       {/* Projects section */}
       <section>
         <h2 className=''>Projects</h2>
-        <div className='flex flex-wrap flex-row'>
+        <div className='flex flex-wrap flex-row space-x-4 space-y-4'>
           {
             projects.map((project, index) => (
               <ProjectCard key={index} {...project}/>
@@ -342,6 +326,10 @@ export default async function Home({
           </div>
         ))}
       </div>
+
+
+
+      <TechSkill image='./extension.png' heading='Web dev' techs={[{image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"},{image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}, {image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}, {image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}]}/>
 
       <Footer />
     </div>

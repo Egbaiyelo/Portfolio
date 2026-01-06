@@ -225,11 +225,11 @@ export default async function Home({
               <p>NodeJS</p>
             </div>
             <div>
-              <Image src={"./about-icons/nextjs.png"} alt='' height={45} width={45}></Image>
+              <Image src={"./about-icons/nodejs.png"} alt='' height={45} width={45}></Image>
               <p>NextJS</p>
             </div>
             <div>
-              <Image src={"./about-icons/nextjs.png"} alt='' height={45} width={45}></Image>
+              <Image src={"./about-icons/nodejs.png"} alt='' height={45} width={45}></Image>
               <p>ASP.NET</p>
             </div>
           </div>

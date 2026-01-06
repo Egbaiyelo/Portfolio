@@ -22,14 +22,36 @@ export default async function Home({
 
 
   const skillGroups = [
-    { title: "Languages", skills: ["TypeScript", "Rust", "C++", "Python"] },
-    { title: "Frontend", skills: ["React", "Next.js", "Tailwind", "Framer Motion"] },
-    { title: "Backend", skills: ["Node.js", "PostgreSQL", "Redis", "gRPC"] }
+    { title: "Languages", image: "", techs: [
+      {name: "Typescript", image: "", description: ""}, 
+      {name: "Javascript", image: "", description: ""}, 
+      {name: "C++", image: "", description: ""},
+      {name: "C#", image: "", description: ""},
+      {name: "Java", image: "", description: ""},
+      {name: "Python", image: "", description: ""}] 
+    },
+    { title: "Web development", image: "", techs: [
+      {name: "Tailwind", image: "", description: ""},
+      {name: "React", image: "", description: ""},
+      {name: "NextJS", image: "", description: ""},
+      {name: "NodeJS", image: "", description: ""},
+      {name: "ASP.NET", image: "", description: ""},
+      {name: "Postgres", image: "", description: ""},
+      {name: "MongoDB", image: "", description: ""},
+      {name: "express", image: "", description: ""},
+      
+    ] },
+    { title: "Testing", image: "", techs: [
+      {name: "Jest", image: "", description: ""}, 
+      {name: "Puppeteer", image: "", description: ""}, 
+      {name: "Playwright", image: "", description: ""}] 
+    },
+    { title: "Cloud and devops", image: "", techs: [
+      {name: "AWS", image: "", description: "IAM, Lambda, EC2"}, 
+      {name: "Github actions", image: "", description: ""}, 
+      {name: "Github hooks", image: "", description: ""}] 
+    }
   ];
-
-  const techStacks = {
-
-  }
 
   const projects = [
     {
@@ -312,24 +334,16 @@ export default async function Home({
         <h2>Endorsements</h2>
       </section> */}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-        {skillGroups.map((group) => (
-          <div key={group.title} className="bg-[#D1D5DB] p-6 rounded-[2rem] space-y-4">
-            <h3 className="text-xl font-bold opacity-80">{group.title}</h3>
-            <div className="flex flex-wrap gap-2">
-              {group.skills.map(skill => (
-                <span key={skill} className="px-3 py-1 bg-[#BFC3C9] rounded-full text-sm font-medium">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-
-
-      <TechSkill image='./extension.png' heading='Web dev' techs={[{image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"},{image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}, {image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}, {image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}]}/>
+      {/* Technical skills */}
+      <section>
+        <h2>Technical Skills</h2>
+        {
+          skillGroups.map(skill => (
+            <TechSkill key={skill.title} {...skill}/>
+          ))
+        }
+      </section>
+      {/* <TechSkill image='./extension.png' title='Web dev' techs={[{image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"},{image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}, {image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}, {image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}]}/> */}
 
       <Footer />
     </div>

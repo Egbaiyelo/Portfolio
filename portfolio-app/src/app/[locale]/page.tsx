@@ -26,6 +26,34 @@ export default async function Home({
     { title: "Backend", skills: ["Node.js", "PostgreSQL", "Redis", "gRPC"] }
   ];
 
+  const techStacks = {
+
+  }
+
+  const projects = [
+    {
+      images: [],
+      heading: 'File Service',
+      description: 'owjf wfiaw  awifojage rgrjioar gwaeiog eagroig earjog eagoi er',
+      link: '',
+      tags: ["nodejs", "microservice", "docker", "apis"]
+    },
+    {
+      images: ["/extension.png"],  //extension
+      heading: 'Browser-data extension',
+      description: 'My Browser data extension',
+      link: '',
+      tags: ["extension", "chromeapis", "js"]
+    },
+    {
+      images: ["/internet.png", "/extension.png"],  //webapp
+      heading: 'Portfolio',
+      description: 'My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface',
+      link: '',
+      tags: ["nextjs", "intl", "graphics", "typescript"]
+    }
+  ]
+
   return (
     <div>
       <Nav />
@@ -283,30 +311,15 @@ export default async function Home({
 
       </section>
 
+      {/* Projects section */}
       <section>
-        <h2>Projects</h2>
+        <h2 className=''>Projects</h2>
         <div className='flex flex-wrap flex-row'>
-          <ProjectCard
-            images={[]}
-            heading='File Service'
-            description='owjf wfiaw  awifojage rgrjioar gwaeiog eagroig earjog eagoi er'
-            link=''
-            tags={["nodejs", "microservice", "docker", "apis"]}
-          />
-          <ProjectCard
-            images={["/extension.png"]} // extension
-            heading='Browser-data extension'
-            description='My browser extension'
-            link=''
-            tags={["extension", "chromeapis", "js"]}
-          />
-          <ProjectCard
-            images={["/internet.png", "/extension.png"]} // webapp
-            heading='Portfolio'
-            description='My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface'
-            link=''
-            tags={["nextjs", "intl", "graphics", "typescript"]}
-          />
+          {
+            projects.map((project, index) => (
+              <ProjectCard key={index} {...project}/>
+            ))
+          }
         </div>
       </section>
 

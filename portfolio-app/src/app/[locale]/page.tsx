@@ -12,11 +12,12 @@ import TechSkill from '@/components/tools';
 import { 
   SiTypescript, SiJavascript, SiCplusplus, SiOpenjdk, SiPython,
   SiTailwindcss, SiReact, SiNextdotjs, SiNodedotjs, SiDotnet, SiPostgresql, 
-  SiMongodb, SiExpress, SiJest, SiPuppeteer, SiPlaywright, SiAmazonwebservices, 
+  SiMongodb, SiExpress, SiJest, SiPuppeteer, SiAmazonwebservices, 
   SiGithubactions, SiGithub
 } from 'react-icons/si';
 import { TbBrandCSharp } from "react-icons/tb";
 import { MdCode, MdWeb, MdBugReport, MdCloudQueue } from 'react-icons/md';
+import { FaGitAlt } from "react-icons/fa6";
 
 export default async function Home({
   params
@@ -39,26 +40,27 @@ export default async function Home({
       {name: "Java", Icon: SiOpenjdk, description: ""},
       {name: "Python", Icon: SiPython, description: ""}] 
     },
-    // { title: "Web development", Icon: "", techs: [
-    //   {name: "Tailwind", Icon: "", description: ""},
-    //   {name: "React", Icon: "", description: ""},
-    //   {name: "NextJS", Icon: "", description: ""},
-    //   {name: "NodeJS", Icon: "", description: ""},
-    //   {name: "ASP.NET", Icon: "", description: ""},
-    //   {name: "Postgres", Icon: "", description: ""},
-    //   {name: "MongoDB", Icon: "", description: ""},
-    //   {name: "express", Icon: "", description: ""}] 
-    // },
-    // { title: "Testing", Icon: "", techs: [
-    //   {name: "Jest", Icon: "", description: ""}, 
-    //   {name: "Puppeteer", Icon: "", description: ""}, 
-    //   {name: "Playwright", Icon: "", description: ""}] 
-    // },
-    // { title: "Cloud and devops", Icon: "", techs: [
-    //   {name: "AWS", Icon: "", description: "IAM, Lambda, EC2"}, 
-    //   {name: "Github actions", Icon: "", description: ""}, 
-    //   {name: "Github hooks", Icon: "", description: ""}] 
-    // }
+    { title: "Web development", Icon: MdWeb, techs: [
+      {name: "Tailwind", Icon: SiTailwindcss, description: ""},
+      {name: "React", Icon: SiReact, description: ""},
+      {name: "NextJS", Icon: SiNextdotjs, description: ""},
+      {name: "NodeJS", Icon: SiNodedotjs, description: ""},
+      {name: "ASP.NET", Icon: SiDotnet, description: ""},
+      {name: "Postgres", Icon: SiPostgresql, description: ""},
+      {name: "MongoDB", Icon: SiMongodb, description: ""},
+      {name: "express", Icon: SiExpress, description: ""}] 
+    },
+    { title: "Testing", Icon: MdBugReport, techs: [
+      {name: "Jest", Icon: SiJest, description: ""}, 
+      {name: "Puppeteer", Icon: SiPuppeteer, description: ""}, 
+      //+ find the icon
+      {name: "Playwright", Icon: MdCode, description: ""}] 
+    },
+    { title: "Cloud and devops", Icon: MdCloudQueue, techs: [
+      {name: "AWS", Icon: SiAmazonwebservices, description: "IAM, Lambda, EC2"}, 
+      {name: "Github actions", Icon: SiGithubactions, description: ""}, 
+      {name: "Github hooks", Icon: FaGitAlt, description: ""}] 
+    }
   ];
 
   const projects = [

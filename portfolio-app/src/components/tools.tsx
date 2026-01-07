@@ -1,21 +1,23 @@
 import Image from "next/image";
+import { SimpleIcon } from "simple-icons";
 
-type tech = { image: string, name: string, description?: string }
+
+type tech = { icon: SimpleIcon, name: string, description?: string }
 interface TechStackProps {
     //   techStackKey: string, // for intl in future
-    image: string;
+    icon: SimpleIcon;
     title: string;
     techs: tech[];
 }
 
 /// A techskill container element
-export default function TechSkill({ image, title, techs }: TechStackProps) {
+export default function TechSkill({ icon, title, techs }: TechStackProps) {
     return (
         <section className="mx-7 my-2 p-5 flex flex-col rounded-sm bg-[#202421]" aria-labelledby={`${title}-heading`}>
             
             {/* Heading */}
             <div className="font-bold flex items-center gap-2">
-                <Image src={image} alt={`${title}-icon`} width={40} height={40}/>
+                <Image src={icon} alt={`${title}-icon`} width={40} height={40}/>
                 <h3   id={`${title}-heading`} className="capitalize text-xl my-auto ml-2">{title}</h3>
                 <div className="mt-3 mb-4 h-2px bg-white/10" />
             </div>

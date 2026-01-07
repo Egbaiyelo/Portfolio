@@ -9,6 +9,15 @@ import Footer from '@/components/footer';
 import ProjectCard from '@/components/projectCard';
 import TechSkill from '@/components/tools';
 
+import { 
+  SiTypescript, SiJavascript, SiCplusplus, SiOpenjdk, SiPython,
+  SiTailwindcss, SiReact, SiNextdotjs, SiNodedotjs, SiDotnet, SiPostgresql, 
+  SiMongodb, SiExpress, SiJest, SiPuppeteer, SiPlaywright, SiAmazonwebservices, 
+  SiGithubactions, SiGithub
+} from 'react-icons/si';
+import { TbBrandCSharp } from "react-icons/tb";
+import { MdCode, MdWeb, MdBugReport, MdCloudQueue } from 'react-icons/md';
+
 export default async function Home({
   params
 }: {
@@ -20,37 +29,36 @@ export default async function Home({
 
   const t = await getTranslations('Homepage');
 
-
+  console.log('main Icon', MdCode)
   const skillGroups = [
-    { title: "Languages", image: "", techs: [
-      {name: "Typescript", image: "", description: ""}, 
-      {name: "Javascript", image: "", description: ""}, 
-      {name: "C++", image: "", description: ""},
-      {name: "C#", image: "", description: ""},
-      {name: "Java", image: "", description: ""},
-      {name: "Python", image: "", description: ""}] 
+    { title: "Languages", Icon: MdCode, techs: [
+      {name: "Typescript", Icon: SiTypescript, description: ""}, 
+      {name: "Javascript", Icon: SiJavascript, description: ""}, 
+      {name: "C++", Icon: SiCplusplus, description: ""},
+      {name: "C#", Icon: TbBrandCSharp, description: ""},
+      {name: "Java", Icon: SiOpenjdk, description: ""},
+      {name: "Python", Icon: SiPython, description: ""}] 
     },
-    { title: "Web development", image: "", techs: [
-      {name: "Tailwind", image: "", description: ""},
-      {name: "React", image: "", description: ""},
-      {name: "NextJS", image: "", description: ""},
-      {name: "NodeJS", image: "", description: ""},
-      {name: "ASP.NET", image: "", description: ""},
-      {name: "Postgres", image: "", description: ""},
-      {name: "MongoDB", image: "", description: ""},
-      {name: "express", image: "", description: ""},
-      
-    ] },
-    { title: "Testing", image: "", techs: [
-      {name: "Jest", image: "", description: ""}, 
-      {name: "Puppeteer", image: "", description: ""}, 
-      {name: "Playwright", image: "", description: ""}] 
-    },
-    { title: "Cloud and devops", image: "", techs: [
-      {name: "AWS", image: "", description: "IAM, Lambda, EC2"}, 
-      {name: "Github actions", image: "", description: ""}, 
-      {name: "Github hooks", image: "", description: ""}] 
-    }
+    // { title: "Web development", Icon: "", techs: [
+    //   {name: "Tailwind", Icon: "", description: ""},
+    //   {name: "React", Icon: "", description: ""},
+    //   {name: "NextJS", Icon: "", description: ""},
+    //   {name: "NodeJS", Icon: "", description: ""},
+    //   {name: "ASP.NET", Icon: "", description: ""},
+    //   {name: "Postgres", Icon: "", description: ""},
+    //   {name: "MongoDB", Icon: "", description: ""},
+    //   {name: "express", Icon: "", description: ""}] 
+    // },
+    // { title: "Testing", Icon: "", techs: [
+    //   {name: "Jest", Icon: "", description: ""}, 
+    //   {name: "Puppeteer", Icon: "", description: ""}, 
+    //   {name: "Playwright", Icon: "", description: ""}] 
+    // },
+    // { title: "Cloud and devops", Icon: "", techs: [
+    //   {name: "AWS", Icon: "", description: "IAM, Lambda, EC2"}, 
+    //   {name: "Github actions", Icon: "", description: ""}, 
+    //   {name: "Github hooks", Icon: "", description: ""}] 
+    // }
   ];
 
   const projects = [

@@ -13,8 +13,7 @@ import {
   SiTypescript, SiJavascript, SiCplusplus, SiOpenjdk, SiPython,
   SiTailwindcss, SiReact, SiNextdotjs, SiNodedotjs, SiDotnet, SiPostgresql, 
   SiMongodb, SiExpress, SiJest, SiPuppeteer, SiAmazonwebservices, 
-  SiGithubactions, SiGithub
-} from 'react-icons/si';
+  SiGithubactions, SiGithub, SiWebassembly } from 'react-icons/si';
 import { TbBrandCSharp } from "react-icons/tb";
 import { MdCode, MdWeb, MdBugReport, MdCloudQueue } from 'react-icons/md';
 import { FaGitAlt } from "react-icons/fa6";
@@ -38,7 +37,8 @@ export default async function Home({
       {name: "C++", Icon: SiCplusplus, description: "Systems, graphics"},
       {name: "C#", Icon: TbBrandCSharp, description: "Main, OOP & .NET"},
       {name: "Java", Icon: SiOpenjdk, description: "OOP, Backend & cross-platform"},
-      {name: "Python", Icon: SiPython, description: "Scripting, automation & data processing"}] 
+      {name: "Python", Icon: SiPython, description: "Scripting, automation & data processing"}]
+      // rust and go intermediate 
     },
     { title: "Web development", Icon: MdWeb, techs: [
       {name: "Tailwind", Icon: SiTailwindcss, description: "Utility CSS"},
@@ -48,7 +48,8 @@ export default async function Home({
       {name: "ASP.NET", Icon: SiDotnet, description: "Backend, .NET & APIs"},
       {name: "Postgres", Icon: SiPostgresql, description: "Relational DB"},
       {name: "MongoDB", Icon: SiMongodb, description: "NoSQL DB"},
-      {name: "express", Icon: SiExpress, description: "Rest APIs"}] 
+      {name: "Express", Icon: SiExpress, description: "Rest APIs"},
+      {name: "WebAssembly", Icon: SiWebassembly, description: "High-performance web"}] 
     },
     // Testing and tooling
     { title: "Testing", Icon: MdBugReport, techs: [
@@ -260,50 +261,7 @@ export default async function Home({
 
         {/*+ or maybe make tree graphs somethings connect to multiple */}
 
-        <div className=''>Language</div>
 
-        <div>
-          <h3>Languages</h3>
-          <p>Webdev: HTML, CSS</p>
-          {/* <!-- Languages I am fluent in and use often --> */}
-          <p>Core: JavaScript/Typescript, C#, Python, C++</p>
-          {/* <!-- Languages I am literate in and interested in mastering --> */}
-          {/* <p>Others: Rust, Go, Java</p> */}
-        </div>
-
-        <div>
-          <h3>Frameworks and Libraries</h3>
-          <div> <h4>Web development</h4>
-
-            <div>
-              <Image src={"./about-icons/tailwind.png"} alt='tailwind' height={45} width={45}></Image>
-              <p>Tilwind</p>
-            </div>
-            <div>
-              <Image src={"./about-icons/react.png"} alt='' height={45} width={45}></Image>
-              <p>React</p>
-            </div>
-            <div>
-              <Image src={"./about-icons/nodejs.png"} alt='' height={45} width={45}></Image>
-              <p>NodeJS</p>
-            </div>
-            <div>
-              <Image src={"./about-icons/nodejs.png"} alt='' height={45} width={45}></Image>
-              <p>NextJS</p>
-            </div>
-            <div>
-              <Image src={"./about-icons/nodejs.png"} alt='' height={45} width={45}></Image>
-              <p>ASP.NET</p>
-            </div>
-          </div>
-          <p>Postgres, MongoDB, Electron, Express</p>
-        </div>
-
-        <div>
-          <h3>Other Tools</h3>
-          <p>Testing: Jest, Puppeteer, Playwright</p>
-          <p>Cloud and DevOps: Github pages, Github actions, AWS</p>
-        </div>
       </section>
 
       <section>
@@ -335,8 +293,8 @@ export default async function Home({
         <h2 className=''>Projects</h2>
         <div className='flex flex-wrap flex-row space-x-4 space-y-4'>
           {
-            projects.map((project, index) => (
-              <ProjectCard key={index} {...project}/>
+            projects.map(project => (
+              <ProjectCard key={project.heading} {...project}/>
             ))
           }
         </div>

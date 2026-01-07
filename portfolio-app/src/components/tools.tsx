@@ -31,13 +31,15 @@ export default function TechSkill({ Icon, title, techs }: TechStackProps) {
                         const TechIcon = tech.Icon ?? MdCode;
 
                         return (
-                            <div key={tech.name} className="flex items-center gap-2 transition-colors duration-200 hover:bg-white/25" aria-label={`${tech.name}: ${tech.description ?? "Technology skill"}`}>
-                                <TechIcon title={`${tech.name} logo`} size={35} />
+                            <div key={tech.name} className="group
+                             flex items-center gap-2 transition-all duration-200 ease-out text-gray-200 hover:scale-[1.03]"
+                             aria-label={`${tech.name}: ${tech.description ?? "Technology skill"}`}>
+                                <TechIcon title={`${tech.name} logo`} size={35} className='group-hover:text-yellow-400'/>
                                 <div className="leading-tight my-auto">
-                                    <span className="font-semibold text-sm">{tech.name}</span>
+                                    <span className="capitalize font-semibold text-sm group-hover:text-yellow-400">{tech.name}</span>
                                     {/* <div className="text-xs text-gray-400">{tech.description}</div> */}
                                     {tech.description && (
-                                        <div className="text-xs text-gray-400">{tech.description}</div>
+                                        <div className="text-xs text-gray-400 group-hover:text-gray-200">{tech.description}</div>
                                     )}
                                 </div>
                             </div>

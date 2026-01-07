@@ -33,33 +33,36 @@ export default async function Home({
   console.log('main Icon', MdCode)
   const skillGroups = [
     { title: "Languages", Icon: MdCode, techs: [
-      {name: "Typescript", Icon: SiTypescript, description: ""}, 
-      {name: "Javascript", Icon: SiJavascript, description: ""}, 
-      {name: "C++", Icon: SiCplusplus, description: ""},
-      {name: "C#", Icon: TbBrandCSharp, description: ""},
-      {name: "Java", Icon: SiOpenjdk, description: ""},
-      {name: "Python", Icon: SiPython, description: ""}] 
+      {name: "Typescript", Icon: SiTypescript, description: "Typed JS"}, 
+      {name: "Javascript", Icon: SiJavascript, description: "Frontend & NodeJS"}, 
+      {name: "C++", Icon: SiCplusplus, description: "Systems, graphics"},
+      {name: "C#", Icon: TbBrandCSharp, description: "Main, OOP & .NET"},
+      {name: "Java", Icon: SiOpenjdk, description: "OOP, Backend & cross-platform"},
+      {name: "Python", Icon: SiPython, description: "Scripting, automation & data processing"}] 
     },
     { title: "Web development", Icon: MdWeb, techs: [
-      {name: "Tailwind", Icon: SiTailwindcss, description: ""},
-      {name: "React", Icon: SiReact, description: ""},
-      {name: "NextJS", Icon: SiNextdotjs, description: ""},
-      {name: "NodeJS", Icon: SiNodedotjs, description: ""},
-      {name: "ASP.NET", Icon: SiDotnet, description: ""},
-      {name: "Postgres", Icon: SiPostgresql, description: ""},
-      {name: "MongoDB", Icon: SiMongodb, description: ""},
-      {name: "express", Icon: SiExpress, description: ""}] 
+      {name: "Tailwind", Icon: SiTailwindcss, description: "Utility CSS"},
+      {name: "React", Icon: SiReact, description: "Component-based Frontend"},
+      {name: "NextJS", Icon: SiNextdotjs, description: "React & SSR"},
+      {name: "NodeJS", Icon: SiNodedotjs, description: "JS Backend"},
+      {name: "ASP.NET", Icon: SiDotnet, description: "Backend, .NET & APIs"},
+      {name: "Postgres", Icon: SiPostgresql, description: "Relational DB"},
+      {name: "MongoDB", Icon: SiMongodb, description: "NoSQL DB"},
+      {name: "express", Icon: SiExpress, description: "Rest APIs"}] 
     },
+    // Testing and tooling
     { title: "Testing", Icon: MdBugReport, techs: [
-      {name: "Jest", Icon: SiJest, description: ""}, 
-      {name: "Puppeteer", Icon: SiPuppeteer, description: ""}, 
+      {name: "Jest", Icon: SiJest, description: "JS testing"}, 
+      {name: "Puppeteer", Icon: SiPuppeteer, description: "Browser automation"}, 
       //+ find the icon
-      {name: "Playwright", Icon: MdCode, description: ""}] 
+      {name: "Playwright", Icon: MdCode, description: "Cross-browser testing"}] 
+      // Soon mstest, junit
     },
     { title: "Cloud and devops", Icon: MdCloudQueue, techs: [
-      {name: "AWS", Icon: SiAmazonwebservices, description: "IAM, Lambda, EC2"}, 
-      {name: "Github actions", Icon: SiGithubactions, description: ""}, 
-      {name: "Github hooks", Icon: FaGitAlt, description: ""}] 
+      {name: "AWS", Icon: SiAmazonwebservices, description: "IAM, Lambda, EC2..."}, 
+      {name: "Github actions", Icon: SiGithubactions, description: "CI/CD, testing & deployment"}, 
+      {name: "Git", Icon: FaGitAlt, description: "Version control"}] 
+      // Soon terraform
     }
   ];
 

@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons';
 import { MdCode } from 'react-icons/md'
 
-type tech = { Icon: IconType, name: string, description?: string }
+type tech = Readonly<{ Icon: IconType, name: string, description?: string }>
 interface TechStackProps {
     //   techStackKey: string, // for intl in future
     Icon: IconType;

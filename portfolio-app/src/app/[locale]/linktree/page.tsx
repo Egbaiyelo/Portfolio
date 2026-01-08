@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-
 export default function LinkTree() {
     return (
         <div className="mx-auto p-8 bg-[#1A1A1A] w-fit  mt-20 rounded-xl">

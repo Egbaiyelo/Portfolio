@@ -1,7 +1,6 @@
 import { redirect } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { ignoreListAnonymousStackFramesIfSandwiched } from 'next/dist/next-devtools/server/shared';
-import LinkTree from '@/components/LinkTree';
+// import LinkTree from '@/components/LinkTree';
 
 export default function RootPage() {
 

@@ -11,7 +11,7 @@ screenshots/
 # 
 .git
 .vscode/
-
+.next/
 
 **/components/component.css
 **/components/interface.tsx

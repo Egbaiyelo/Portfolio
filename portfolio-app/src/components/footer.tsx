@@ -1,6 +1,10 @@
-import Image from "next/image";
 import { getTranslations } from 'next-intl/server';
 import { Link } from "@/i18n/navigation";
+import { BsDiscord } from "react-icons/bs";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdContentCopy } from "react-icons/md";
+
+
 
 function copyToClipboard() {
 
@@ -42,7 +46,10 @@ export default async function Footer() {
         {/* email */}
         <div className="flex">
           <a href="mailto:moteniola.egbaiyelo@gmail.com">moteniola.egbaiyelo@gmail.com</a>
-          <a href=""><Image src={"/white-icons/white-copy.png"} alt="" width={10} height={10}/></a>
+          <a href="">
+            <MdContentCopy title='Copy email' size={10} />
+            {/* <Image src={"/white-icons/white-copy.png"} alt="" width={10} height={10} /> */}
+          </a>
         </div>
 
         {/* telephone */}
@@ -54,14 +61,17 @@ export default async function Footer() {
 
 
         <div className="flex flex-row">
-          <a href="https://discord.com/users/" target="_blank" >
-            <Image src="/white-icons/white-discord.png" alt="Discord link" width={45} height={45} />
+          <a href="https://discord.com/users/" target="_blank" className='p-1'>
+            <BsDiscord title='Discord link' size={40} />
+            {/* <Image src="/white-icons/white-discord.png" alt="Discord link" width={45} height={45} /> */}
           </a>
-          <a href="https://github.com/" target="_blank" >
-            <Image className="p-1.5" src="/white-icons/white-github.png" alt="Github link" width={45} height={45} />
+          <a href="https://github.com/" target="_blank" className='p-1'>
+            <FaGithub title='Github link' size={40} />
+            {/* <Image className="p-1.5" src="/white-icons/white-github.png" alt="Github link" width={45} height={45} /> */}
           </a>
-          <a href="https://www.linkedin.com/in/" target="_blank" >
-            <Image src="/white-icons/white-linkedin.png" alt="Linkedin link" width={45} height={45} />
+          <a href="https://www.linkedin.com/in/" target="_blank" className='p-1'>
+            <FaLinkedin title='Linkedin link' size={40} />
+            {/* <Image src="/white-icons/white-linkedin.png" alt="Linkedin link" width={45} height={45} /> */}
           </a>
           {/* <a href="" target="_blank" >
             <Image src="/medium.png" alt="Medium link" width={45} height={45} />

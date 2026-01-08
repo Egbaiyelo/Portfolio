@@ -11,11 +11,10 @@ interface TechStackProps {
 
 /// A techskill container element
 export default function TechSkill({ Icon, title, techs }: TechStackProps) {
-    console.log('main icon', Icon)
     const TitleIon = Icon ?? MdCode;
 
     return (
-        <section className="mx-7 my-2 p-5 flex flex-col rounded-sm bg-[#202421]" aria-labelledby={`${title}-heading`}>
+        <section className="mx-7 my-2 p-8 flex flex-col rounded-sm bg-[#202421]" aria-labelledby={`${title}-heading`}>
 
             {/* Heading */}
             <div className="font-bold flex items-center gap-2">
@@ -34,7 +33,7 @@ export default function TechSkill({ Icon, title, techs }: TechStackProps) {
                             <div key={tech.name} className="group
                              flex items-center gap-2 transition-all duration-200 ease-out text-gray-200 hover:scale-[1.03]"
                              aria-label={`${tech.name}: ${tech.description ?? "Technology skill"}`}>
-                                <TechIcon title={`${tech.name} logo`} size={35} className='group-hover:text-yellow-400'/>
+                                <TechIcon title={`${tech.name} logo`} size={35} className='group-hover:text-yellow-400' />
                                 <div className="leading-tight my-auto">
                                     <span className="capitalize font-semibold text-sm group-hover:text-yellow-400">{tech.name}</span>
                                     {/* <div className="text-xs text-gray-400">{tech.description}</div> */}

@@ -9,14 +9,16 @@ import Footer from '@/components/footer';
 import ProjectCard from '@/components/projectCard';
 import TechSkill from '@/components/tools';
 
-import { 
+import {
   SiTypescript, SiJavascript, SiCplusplus, SiOpenjdk, SiPython,
-  SiTailwindcss, SiReact, SiNextdotjs, SiNodedotjs, SiDotnet, SiPostgresql, 
-  SiMongodb, SiExpress, SiJest, SiPuppeteer, SiAmazonwebservices, 
-  SiGithubactions, SiGithub, SiWebassembly } from 'react-icons/si';
+  SiTailwindcss, SiReact, SiNextdotjs, SiNodedotjs, SiDotnet, SiPostgresql,
+  SiMongodb, SiExpress, SiJest, SiPuppeteer, SiAmazonwebservices,
+  SiGithubactions, SiGithub, SiWebassembly
+} from 'react-icons/si';
 import { TbBrandCSharp } from "react-icons/tb";
 import { MdCode, MdWeb, MdBugReport, MdCloudQueue } from 'react-icons/md';
 import { FaGitAlt } from "react-icons/fa6";
+import { FaDocker } from "react-icons/fa";
 
 export default async function Home({
   params
@@ -29,40 +31,44 @@ export default async function Home({
 
   const t = await getTranslations('Homepage');
 
-  console.log('main Icon', MdCode)
   const skillGroups = [
-    { title: "Languages", Icon: MdCode, techs: [
-      {name: "Typescript", Icon: SiTypescript, description: "Typed JS"}, 
-      {name: "Javascript", Icon: SiJavascript, description: "Frontend & NodeJS"}, 
-      {name: "C++", Icon: SiCplusplus, description: "Systems, graphics"},
-      {name: "C#", Icon: TbBrandCSharp, description: "Main, OOP & .NET"},
-      {name: "Java", Icon: SiOpenjdk, description: "OOP, Backend & cross-platform"},
-      {name: "Python", Icon: SiPython, description: "Scripting, automation & data processing"}]
+    {
+      title: "Languages", Icon: MdCode, techs: [
+        { name: "Typescript", Icon: SiTypescript, description: "Typed JS" },
+        { name: "Javascript", Icon: SiJavascript, description: "Frontend & NodeJS" },
+        { name: "C++", Icon: SiCplusplus, description: "Systems, graphics" },
+        { name: "C#", Icon: TbBrandCSharp, description: "Main, OOP & .NET" },
+        { name: "Java", Icon: SiOpenjdk, description: "OOP, Backend & cross-platform" },
+        { name: "Python", Icon: SiPython, description: "Scripting, automation & data processing" }]
       // rust and go intermediate 
     },
-    { title: "Web development", Icon: MdWeb, techs: [
-      {name: "Tailwind", Icon: SiTailwindcss, description: "Utility CSS"},
-      {name: "React", Icon: SiReact, description: "Component-based Frontend"},
-      {name: "NextJS", Icon: SiNextdotjs, description: "React & SSR"},
-      {name: "NodeJS", Icon: SiNodedotjs, description: "JS Backend"},
-      {name: "ASP.NET", Icon: SiDotnet, description: "Backend, .NET & APIs"},
-      {name: "Postgres", Icon: SiPostgresql, description: "Relational DB"},
-      {name: "MongoDB", Icon: SiMongodb, description: "NoSQL DB"},
-      {name: "Express", Icon: SiExpress, description: "Rest APIs"},
-      {name: "WebAssembly", Icon: SiWebassembly, description: "High-performance web"}] 
+    {
+      title: "Web development", Icon: MdWeb, techs: [
+        { name: "Tailwind", Icon: SiTailwindcss, description: "Utility CSS" },
+        { name: "React", Icon: SiReact, description: "Component-based Frontend" },
+        { name: "NextJS", Icon: SiNextdotjs, description: "React & SSR" },
+        { name: "NodeJS", Icon: SiNodedotjs, description: "JS Backend" },
+        { name: "ASP.NET", Icon: SiDotnet, description: "Backend, .NET & APIs" },
+        { name: "Postgres", Icon: SiPostgresql, description: "Relational DB" },
+        { name: "MongoDB", Icon: SiMongodb, description: "NoSQL DB" },
+        { name: "Express", Icon: SiExpress, description: "Rest APIs" },
+        { name: "WebAssembly", Icon: SiWebassembly, description: "High-performance web" }]
     },
     // Testing and tooling
-    { title: "Testing", Icon: MdBugReport, techs: [
-      {name: "Jest", Icon: SiJest, description: "JS testing"}, 
-      {name: "Puppeteer", Icon: SiPuppeteer, description: "Browser automation"}, 
-      //+ find the icon
-      {name: "Playwright", Icon: MdCode, description: "Cross-browser testing"}] 
+    {
+      title: "Testing", Icon: MdBugReport, techs: [
+        { name: "Jest", Icon: SiJest, description: "JS testing" },
+        { name: "Puppeteer", Icon: SiPuppeteer, description: "Browser automation" },
+        //+ find the icon
+        { name: "Playwright", Icon: MdCode, description: "Cross-browser testing" }]
       // Soon mstest, junit
     },
-    { title: "Cloud and devops", Icon: MdCloudQueue, techs: [
-      {name: "AWS", Icon: SiAmazonwebservices, description: "IAM, Lambda, EC2..."}, 
-      {name: "Github actions", Icon: SiGithubactions, description: "CI/CD, testing & deployment"}, 
-      {name: "Git", Icon: FaGitAlt, description: "Version control"}] 
+    {
+      title: "Cloud and devops", Icon: MdCloudQueue, techs: [
+        { name: "AWS", Icon: SiAmazonwebservices, description: "IAM, Lambda, EC2..." },
+        { name: "Docker", Icon: FaDocker, description: "Containerization" },
+        { name: "Github actions", Icon: SiGithubactions, description: "CI/CD, testing & deployment" },
+        { name: "Git", Icon: FaGitAlt, description: "Version control" }]
       // Soon terraform
     }
   ];
@@ -251,19 +257,6 @@ export default async function Home({
         <div></div>
       </section>
 
-
-      {/* <!-- Skills --> */}
-      <section>
-        {/* <!-- maybe sum all the skills and then have them split in the skills page */}
-        {/* just so its smaller on the main page --> */}
-        <h2>My Skills</h2>
-        <p>In some order of proficiency</p>
-
-        {/*+ or maybe make tree graphs somethings connect to multiple */}
-
-
-      </section>
-
       <section>
         <h2>Experiences</h2>
 
@@ -294,7 +287,7 @@ export default async function Home({
         <div className='flex flex-wrap flex-row space-x-4 space-y-4'>
           {
             projects.map(project => (
-              <ProjectCard key={project.heading} {...project}/>
+              <ProjectCard key={project.heading} {...project} />
             ))
           }
         </div>
@@ -310,7 +303,7 @@ export default async function Home({
         <h2>Technical Skills</h2>
         {
           skillGroups.map(skill => (
-            <TechSkill key={skill.title} {...skill}/>
+            <TechSkill key={skill.title} {...skill} />
           ))
         }
       </section>

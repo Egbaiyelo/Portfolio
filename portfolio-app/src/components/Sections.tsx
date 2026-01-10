@@ -16,18 +16,29 @@ interface ProjectProps {
     tags: string[];
 }
 
-export default async function ProjectCard({ icons, link, heading, description, tags }: ProjectProps) {
+interface ExperienceProps {
+    title: string;
+    date?: string;
+    jobType?: string;
+    organization: string;
+    description: string;
+    tools: string[];
+}
+
+export async function ProjectCard({ icons, link, heading, description, tags }: ProjectProps) {
 
     // how to do translation? all projects or each with specific one
     const t = await getTranslations('Projects');
 
     return (
-        <div className='bg-[#D1D5DB] text-black rounded-[2rem] p-8 flex flex-col gap-6 max-w-sm'>
+        //r was rounded 2rem
+        <div className='bg-[#D1D5DB] text-black rounded-[1rem] p-8 flex flex-col gap-6 w-full'>
 
             {/* image - extension, game, webapp etc */}
             <div className='flex justify-between items-start'>
 
-                <div className='bg-[#BFC3C9] p-3 rounded-2xl flex space-x-4'>
+                {/* //r was rounded 2xl  */}
+                <div className='bg-[#BFC3C9] p-3 rounded-xl flex space-x-4'>
 
                     {icons && icons.length > 0 ? (icons.map((Icon, index) => (
                         <Icon
@@ -80,9 +91,34 @@ export default async function ProjectCard({ icons, link, heading, description, t
 
             {/* Learn more */}
             <button className="group relative w-full py-4 bg-[#BFC3C9] hover:bg-[#A8ADB5] text-[#374151] font-bold rounded-full transition-all duration-300 ease-in-out mt-auto  flex items-center justify-center gap-3 overflow-hidden hover:shadow-lg active:scale-95">
-                <SiGithub size={30} className="transition-transform duration-300 group-hover:rotate-12" />
+                <SiGithub size={30} className="transition-transform duration-300 group-hover:rotate-15" />
                 <p className='tracking-wide'>GitHub</p>
             </button>
+        </div>
+    )
+}
+
+export async function ExperienceItem({ title, date, organization, jobType, description, tools }: ExperienceProps) {
+    return (
+        <div className="space-y-8 border-l-2 border-gray-700 ml-4 pl-8">
+
+            <div className="relative">
+                {/* The Dot on the timeline */}
+                <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-yellow-400 border-4 border-gray-900" />
+
+                <div className="flex flex-col md:flex-row md:justify-between mb-2">
+                    <h3 className="text-xl font-bold text-gray-100">{title}</h3>
+                    <span className="text-yellow-400 font-mono text-sm">{date}</span>
+                </div>
+
+                <p className="text-gray-400 font-medium mb-3">`{organization} • {jobType}`</p>
+
+                <ul className="list-disc list-outside ml-4 text-gray-300 space-y-2 text-sm">
+                    <li>Developed responsive web applications using React and Tailwind CSS.</li>
+                    <li>Optimized performance resulting in a 40% faster load time.</li>
+                    <li>Led a team of 4 developers to ship a new dashboard product.</li>
+                </ul>
+            </div>
         </div>
     )
 }

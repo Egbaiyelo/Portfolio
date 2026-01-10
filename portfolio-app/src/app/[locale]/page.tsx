@@ -6,7 +6,7 @@ export const dynamic = 'force-static';
 
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
-import ProjectCard from '@/components/projectCard';
+import {ExperienceItem, ProjectCard} from '@/components/Sections';
 import TechSkill from '@/components/tools';
 
 import {
@@ -22,6 +22,8 @@ import { FaGitAlt } from "react-icons/fa6";
 import { FaDocker, FaLinux, FaExternalLinkAlt } from "react-icons/fa";
 import { IoExtensionPuzzle } from "react-icons/io5";
 import { BsGlobe2 } from "react-icons/bs";
+import { SectionHeading } from '@/components/header';
+import { title } from 'process';
 
 
 
@@ -102,6 +104,27 @@ export default async function Home({
     }
   ]
 
+  const experiences = [
+    {
+      title: "Grading assisstant",
+      organization: 'Trent University',
+      description: 'I was a grading assisstant for the Trent University Computer science department. Curating works of 100+ students across 3 term projects',
+      tools: ['js', 'apis', 'typescript', 'html', 'css', 'tailwind'],
+    },
+    {
+      title: "Technical assisstant (co-op)",
+      organization: "Trent University Careerspace",
+      description: "Worked with the school's careerspace department",
+      tools: ['drupal', 'html', 'css', 'cdn', 'canva'],
+    },
+    {
+      title: "Web developer",
+      organization: 'Hireddd.com',
+      description: "School placement",
+      tools: ['react', 'mongodb', 'express', 'js', 'nodejs', 'puppeteer']
+    }
+  ]
+
   return (
     <div>
       <Nav />
@@ -118,8 +141,8 @@ export default async function Home({
 
 
       <section className='text-white border-t border-white/20'>
-        <h2 className='text-xl font-semibold mb-8 ml-16'>About me Board</h2>
-
+        <SectionHeading heading='About me Board'/>
+        {/* <h2 className='text-xl font-semibold mb-8 ml-16'>About me Board</h2> */}
 
         {/* <div className='w-full py-10 px-4'>proficiencies</div> */}
 
@@ -133,11 +156,11 @@ export default async function Home({
             {/* React, nodejs, tailwind, asp.net, js */}
             <div className='col-span-6 md:col-span-4 border-b border-r border-white/20 p-8 '>
               <span className='flex [&>*]:mr-3 mb-3'>
-                <SiReact title='react-icon' size={20}/>
-                <SiNodedotjs title='nodejs-icon' size={20}/>
-                <SiTailwindcss title='tailwindcss-icon' size={20}/>
-                <SiDotnet title='dotnet-icon' size={20}/>
-                <SiJavascript title='js-icon' size={20} className='text-yellow-300'/>
+                <SiReact title='react-icon' size={20} />
+                <SiNodedotjs title='nodejs-icon' size={20} />
+                <SiTailwindcss title='tailwindcss-icon' size={20} />
+                <SiDotnet title='dotnet-icon' size={20} />
+                <SiJavascript title='js-icon' size={20} className='text-yellow-300' />
               </span>
 
               <strong>Full Stack Developer</strong>
@@ -148,10 +171,10 @@ export default async function Home({
             {/* C++, docker, linux, container */}
             <div className='col-span-6 md:col-span-4 border-b border-r md:border-r border-white/20 p-8'>
               <span className='flex [&>*]:mr-3 mb-3'>
-                <FaLinux title='linux-icon' size={20}/>
-                <SiCplusplus title='cpp-icon' size={20}/>
-                <SiDocker title='docker-icon' size={20}/>
-                <SiPython title='python-icon' size={20}/>
+                <FaLinux title='linux-icon' size={20} />
+                <SiCplusplus title='cpp-icon' size={20} />
+                <SiDocker title='docker-icon' size={20} />
+                <SiPython title='python-icon' size={20} />
               </span>
 
               <strong>Systems Engineer</strong>
@@ -163,8 +186,8 @@ export default async function Home({
             {/* js, ts, c#, */}
             <div className='col-span-12 md:col-span-4 border-b md:border-r-0 border-white/20 p-8'>
               <span className='flex [&>*]:mr-3 mb-3'>
-                <TbBrandCSharp title='csharp-brand' size={20}/>
-                <SiTypescript title='typescript-icon' size={20}/>
+                <TbBrandCSharp title='csharp-brand' size={20} />
+                <SiTypescript title='typescript-icon' size={20} />
               </span>
 
               <strong>Software engineer</strong>
@@ -262,40 +285,32 @@ export default async function Home({
       </section>
 
       <section>
-        <h2>Experiences</h2>
-
+        <SectionHeading heading='Experiences' />
         <div>
-          <h3>01 - web developer</h3>
-          <p>school placement</p>
-          <div>react, mongodb, express, js, nodejs, puppeteer</div>
-        </div>
-
-        <div>
-          <h3>02 - Technical assisstant (co-op)</h3>
-          <p>Worked with the school's careerspace department</p>
-          <div>drupal, html, css, cdn, canva</div>
-        </div>
-
-        <div>
-          <h3>03 - Grading assisstant (academic)</h3>
-          <p>I was a grading assisstant for the Trent University Computer science department. Curating works of 100+ students across 3 term projects</p>
-          <div>js, apis, typescript, html, css, tailwind</div> //the bubble-text thingy
-        </div>
-
-
-      </section>
-
-      {/* Projects section */}
-      <section>
-        <h2 className=''>Projects</h2>
-        <div className='flex flex-wrap flex-row space-x-4 space-y-4'>
-          {
-            projects.map(project => (
-              <ProjectCard key={project.heading} {...project} />
+          { 
+            experiences.map((experience, expIndex) => (
+              <ExperienceItem key={expIndex} {...experience}/>
             ))
           }
         </div>
       </section>
+
+      {/* Projects section */}
+      <section>
+        <SectionHeading heading='Projects' />
+        {/* <h2 className=''>Projects</h2> */}
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {
+            projects.map(project => (
+              <div key={project.heading} className='flex'>
+                <ProjectCard {...project} />
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+
 
       {/* <!-- References --> */}
       {/* <section>
@@ -304,12 +319,14 @@ export default async function Home({
 
       {/* Technical skills */}
       <section>
-        <h2>Technical Skills</h2>
-        {
-          skillGroups.map(skill => (
-            <TechSkill key={skill.title} {...skill} />
-          ))
-        }
+        <SectionHeading heading='Technical Skills' />
+        <div className=''>
+          {
+            skillGroups.map(skill => (
+              <TechSkill key={skill.title} {...skill} />
+            ))
+          }
+        </div>
       </section>
       {/* <TechSkill image='./extension.png' title='Web dev' techs={[{image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"},{image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}, {image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}, {image: "./discord.png", name: "discord", "description": "uwfwefw wufow fwo"}]}/> */}
 

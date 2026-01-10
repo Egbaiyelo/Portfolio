@@ -13,12 +13,17 @@ import {
   SiTypescript, SiJavascript, SiCplusplus, SiOpenjdk, SiPython,
   SiTailwindcss, SiReact, SiNextdotjs, SiNodedotjs, SiDotnet, SiPostgresql,
   SiMongodb, SiExpress, SiJest, SiPuppeteer, SiAmazonwebservices,
-  SiGithubactions, SiGithub, SiWebassembly
+  SiGithubactions, SiGithub, SiWebassembly,
+  SiDocker
 } from 'react-icons/si';
 import { TbBrandCSharp } from "react-icons/tb";
 import { MdCode, MdWeb, MdBugReport, MdCloudQueue } from 'react-icons/md';
 import { FaGitAlt } from "react-icons/fa6";
-import { FaDocker } from "react-icons/fa";
+import { FaDocker, FaLinux, FaExternalLinkAlt } from "react-icons/fa";
+import { IoExtensionPuzzle } from "react-icons/io5";
+import { BsGlobe2 } from "react-icons/bs";
+
+
 
 export default async function Home({
   params
@@ -75,21 +80,21 @@ export default async function Home({
 
   const projects = [
     {
-      images: [],
+      icons: [],
       heading: 'File Service',
       description: 'owjf wfiaw  awifojage rgrjioar gwaeiog eagroig earjog eagoi er',
-      link: '',
+      link: 'uwfe',
       tags: ["nodejs", "microservice", "docker", "apis"]
     },
     {
-      images: ["/extension.png"],  //extension
+      icons: [IoExtensionPuzzle],  //extension
       heading: 'Browser-data extension',
       description: 'My Browser data extension',
       link: '',
       tags: ["extension", "chromeapis", "js"]
     },
     {
-      images: ["/internet.png", "/extension.png"],  //webapp
+      icons: [IoExtensionPuzzle, BsGlobe2],  //webapp
       heading: 'Portfolio',
       description: 'My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface',
       link: '',
@@ -127,12 +132,12 @@ export default async function Home({
 
             {/* React, nodejs, tailwind, asp.net, js */}
             <div className='col-span-6 md:col-span-4 border-b border-r border-white/20 p-8 '>
-              <span className='flex [&>*]:mr-3'>
-                <Image src="/about-icons/react.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/about-icons/nodejs.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/about-icons/tailwind.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/about-icons/dotnet.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/about-icons/js.png" alt="icon" className='mb-3' width={20} height={20} />
+              <span className='flex [&>*]:mr-3 mb-3'>
+                <SiReact title='react-icon' size={20}/>
+                <SiNodedotjs title='nodejs-icon' size={20}/>
+                <SiTailwindcss title='tailwindcss-icon' size={20}/>
+                <SiDotnet title='dotnet-icon' size={20}/>
+                <SiJavascript title='js-icon' size={20} className='text-yellow-300'/>
               </span>
 
               <strong>Full Stack Developer</strong>
@@ -142,11 +147,11 @@ export default async function Home({
 
             {/* C++, docker, linux, container */}
             <div className='col-span-6 md:col-span-4 border-b border-r md:border-r border-white/20 p-8'>
-              <span className='flex [&>*]:mr-3'>
-                <Image src="/about-icons/linux.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/about-icons/cplusplus.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/about-icons/docker.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/about-icons/python.png" alt="icon" className='mb-3' width={20} height={20} />
+              <span className='flex [&>*]:mr-3 mb-3'>
+                <FaLinux title='linux-icon' size={20}/>
+                <SiCplusplus title='cpp-icon' size={20}/>
+                <SiDocker title='docker-icon' size={20}/>
+                <SiPython title='python-icon' size={20}/>
               </span>
 
               <strong>Systems Engineer</strong>
@@ -157,10 +162,9 @@ export default async function Home({
 
             {/* js, ts, c#, */}
             <div className='col-span-12 md:col-span-4 border-b md:border-r-0 border-white/20 p-8'>
-              <span className='flex [&>*]:mr-3'>
-                <Image src="/about-icons/csharp.png" alt="icon" className='mb-3' width={20} height={20} />
-                <Image src="/about-icons/typescript.png" alt="icon" className='mb-3' width={20} height={20} />
-                {/* <Image src="/about-icons/white-icon.png" alt="icon" className='mb-3' width={20} height={20} /> */}
+              <span className='flex [&>*]:mr-3 mb-3'>
+                <TbBrandCSharp title='csharp-brand' size={20}/>
+                <SiTypescript title='typescript-icon' size={20}/>
               </span>
 
               <strong>Software engineer</strong>

@@ -1,18 +1,22 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
+import { IconType } from 'react-icons';
+import { MdCode } from 'react-icons/md'
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { SiGithub } from "react-icons/si"
+
 
 interface ProjectProps {
     //   projectKey: string, // for intl
 
-    images: string[];
+    icons: IconType[];
     link: string;
     heading: string;
     description: string;
     tags: string[];
 }
 
-export default async function ProjectCard({ images, link, heading, description, tags }: ProjectProps) {
+export default async function ProjectCard({ icons, link, heading, description, tags }: ProjectProps) {
 
     // how to do translation? all projects or each with specific one
     const t = await getTranslations('Projects');
@@ -25,33 +29,30 @@ export default async function ProjectCard({ images, link, heading, description, 
 
                 <div className='bg-[#BFC3C9] p-3 rounded-2xl flex space-x-4'>
 
-                    {images && images.length > 0 ? (images.map((imageSrc, index) => (
-                        <Image
+                    {icons && icons.length > 0 ? (icons.map((Icon, index) => (
+                        <Icon
                             key={index}
                             className='object-cover'
-                            src={imageSrc}
-                            alt='project-icon'
-                            width={32} height={32}
-                            // default here too
-                            // onError={(e) => e.currentTarget.src = "/white-icons/white-icon.png"}
+                            title='project-icon'
+                            size={32}
+                        // default here too
+                        // onError={(e) => e.currentTarget.src = "/white-icons/white-icon.png"}
                         />
                     ))
                     ) : (
                         // default down here (a project icon) and up there too
-                        <Image
-                            src={"/white-icons/white-icon.png"}
-                            alt=''
-                            width={32} height={32}
+                        <MdCode
+                            title='code-icon'
+                            size={32}
                         />
                     )}
-                    {/* <Image src={"/white-icons/white-icon.png"} alt='' width={32} height={32} /> */}
 
                 </div>
 
                 {/* Link to repo (if any) */}
                 {link && (
                     <div className='p-2 rounded-full cursor-pointer hover:bg-gray-400 transition'>
-                        <a href={link} target="_blank" rel='noopener noreferrer'><Image src={"/open-link.png"} alt='' width={25} height={25} /></a>
+                        <a href={link} target="_blank" rel='noopener noreferrer'><FaExternalLinkAlt title='open-link.png' size={25} /></a>
                     </div>
                 )}
             </div>
@@ -78,8 +79,9 @@ export default async function ProjectCard({ images, link, heading, description, 
             </div>
 
             {/* Learn more */}
-            <button className="w-full py-4 bg-[#BFC3C9] hover:bg-[#A8ADB5] text-[#374151] font-semibold rounded-full transition-all duration-200 mt-auto">
-                Learn more
+            <button className="group relative w-full py-4 bg-[#BFC3C9] hover:bg-[#A8ADB5] text-[#374151] font-bold rounded-full transition-all duration-300 ease-in-out mt-auto  flex items-center justify-center gap-3 overflow-hidden hover:shadow-lg active:scale-95">
+                <SiGithub size={30} className="transition-transform duration-300 group-hover:rotate-12" />
+                <p className='tracking-wide'>GitHub</p>
             </button>
         </div>
     )

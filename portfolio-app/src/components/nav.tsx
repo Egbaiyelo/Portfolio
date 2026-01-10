@@ -1,3 +1,6 @@
+// move to composition.tsx
+
+
 import LocaleSwitcher from "./LocaleSwitcher";
 import { getTranslations } from 'next-intl/server';
 import { Link } from "@/i18n/navigation";

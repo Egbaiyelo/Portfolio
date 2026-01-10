@@ -25,7 +25,7 @@ import { BsGlobe2 } from "react-icons/bs";
 import { SectionHeading } from '@/components/header';
 import { title } from 'process';
 
-
+// maybe move all lists to json file or so
 
 export default async function Home({
   params
@@ -299,10 +299,10 @@ export default async function Home({
       <section>
         <SectionHeading heading='Projects' />
         {/* <h2 className=''>Projects</h2> */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {
             projects.map(project => (
-              <div key={project.heading} className='flex'>
+              <div key={project.heading} className='flex h-full'>
                 <ProjectCard {...project} />
               </div>
             ))

@@ -1,3 +1,5 @@
+// move to composition.tsx
+
 export function Header() {
   return (
     <header style={{ marginTop: '2rem', padding: '1rem', borderTop: '1px solid #ccc', textAlign: 'center' }}>

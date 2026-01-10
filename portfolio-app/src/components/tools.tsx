@@ -1,3 +1,6 @@
+// move to sections.tsx
+
+
 import { IconType } from 'react-icons';
 import { MdCode } from 'react-icons/md'
 

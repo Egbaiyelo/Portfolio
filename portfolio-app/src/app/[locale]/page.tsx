@@ -25,7 +25,7 @@ import { BsGlobe2 } from "react-icons/bs";
 import { SectionHeading } from '@/components/header';
 // import CanadaMap from './canadaMap';
 import TrentLogo from '../../components/svgs/TrentLogo';
-import CanadaMap from '../../components/svgs/CanadaMap'
+// import CanadaMap from '../../components/svgs/CanadaMap';
 // import { title } from 'process';
 
 // maybe move all lists to json file or so
@@ -297,18 +297,6 @@ export default async function Home({
           <div></div>
         </section>
 
-
-        <section>
-          <SectionHeading heading='Experiences' />
-          <div>
-            {
-              experiences.map((experience, expIndex) => (
-                <ExperienceItem key={expIndex} {...experience} />
-              ))
-            }
-          </div>
-        </section>
-
         {/* Projects section */}
         <section>
           <SectionHeading heading='Projects' />
@@ -324,7 +312,16 @@ export default async function Home({
           </div>
         </section>
 
-
+        <section>
+          <SectionHeading heading='Experiences' />
+          <div>
+            {
+              experiences.map((experience, expIndex) => (
+                <ExperienceItem key={expIndex} {...experience} />
+              ))
+            }
+          </div>
+        </section>
 
         {/* <!-- References --> */}
         {/* <section>

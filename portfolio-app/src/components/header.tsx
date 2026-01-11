@@ -11,7 +11,7 @@ export function Header() {
 export function SectionHeading({ heading }: { heading: string }) {
 
   return (
-    <div className="mb-8">
+    <div className="mb-8 mt-8">
       <h1 className="capitalize text-3xl font-bold text-white mb-2">{heading}</h1>
       <div className="h-2 w-24 bg-yellow-400 rounded-br-2xl"></div>
     </div>

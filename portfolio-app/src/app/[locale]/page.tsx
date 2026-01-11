@@ -144,16 +144,16 @@ export default async function Home({
         {/* <!-- About me --> */}
 
 
-        <section className='text-white border-white/10 pt-12 m-4'>
+        <section className='text-white border-white/10 pt-12'>
           <SectionHeading heading='About me Board' />
 
           {/* About me Container */}
-          <div className='grid grid-cols-12 w-full gap-0 border border-white/10 rounded-xl overflow-hidden grid-flow-row-dense'>
+          <div className='m-4 grid grid-cols-12 gap-0 border border-white/10 rounded-xl overflow-hidden grid-flow-row-dense'>
 
             {/* Row 1: Proficiencies */}
             {/* Top-Block 1: Full Stack */}
             {/* //r they had col-span-6 md:col-span-4 */}
-            <div className='col-span-6 md:col-span-4 group p-8 border-b md:border-r border-white/10 hover:bg-white/5 transition-colors'>
+            <div className=' col-span-12 md:col-span-4 group pt-8 px-8 md:p-8 md:border-b md:border-r border-white/10 hover:bg-white/5 transition-colors'>
               <div className='flex gap-3 mb-4 text-gray-400 group-hover:!text-yellow-400 transition-colors'>
                 <SiReact title='react-icon' size={20} />
                 <SiNodedotjs title='nodejs-icon' size={20} />
@@ -162,12 +162,12 @@ export default async function Home({
                 <SiJavascript title='js-icon' size={20} />
               </div>
               <h3 className='font-bold text-lg mb-2'>Full Stack Developer</h3>
-              <p className='text-sm text-gray-400 leading-relaxed'>Building scalable, user-centric applications with strong back-end logic and intuitive front-end design</p>
+              <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>Building scalable, user-centric applications with strong back-end logic and intuitive front-end design</p>
             </div>
 
             {/* Top-Block 2: Systems */}
             {/* //+ add container */}
-            <div className='col-span-6 md:col-span-4 group p-8 border-b md:border-r border-white/10 hover:bg-white/5 transition-colors'>
+            <div className=' md:justify-between col-span-12 md:col-span-4 group pt-2 px-8 md:p-8 md:border-b md:border-r border-white/10 hover:bg-white/5 transition-colors'>
               <div className='flex gap-3 mb-4 text-gray-400 group-hover:text-blue-400 transition-colors'>
                 <FaLinux title='linux-icon' size={20} />
                 <SiCplusplus title='cpp-icon' size={20} />
@@ -175,23 +175,24 @@ export default async function Home({
                 <SiPython title='python-icon' size={20} />
               </div>
               <h3 className='font-bold text-lg mb-2'>Systems Engineer</h3>
-              <p className='text-sm text-gray-400 leading-relaxed'>Architecting secure, reliable, and performant digital ecosystems with optimized tools and services.</p>
+              <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>Architecting secure, reliable, and performant digital ecosystems with optimized tools and services.</p>
             </div>
 
             {/* Top-Block 3: Software engineering */}
             {/* //+ add js */}
-            <div className='col-span-6 md:col-span-4 group p-8 border-b md:border-r-0 border-white/10 hover:bg-white/5 transition-colors'>
+            {/* //+ merge location and canada, it becomes github contributions, github removes when canada map goes and small location takes over */}
+            <div className='col-span-12 md:col-span-4 group pt-2 px-8 pb-2 md:p-8 border-b md:border-r-0 border-white/10 hover:bg-white/5 transition-colors'>
               <div className='flex gap-3 mb-4 text-gray-400 group-hover:text-yellow-400 transition-colors'>
                 <TbBrandCSharp title='csharp-brand' size={20} />
                 <SiTypescript title='typescript-icon' size={20} />
               </div>
               <h3 className='font-bold text-lg mb-2'>Software engineer</h3>
-              <p className='text-sm text-gray-400 leading-relaxed'>Developing usable, efficient, and scalable software solutions that prioritize user experience.</p>
+              <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>Developing usable, efficient, and scalable software solutions that prioritize user experience.</p>
             </div>
 
 
             {/* Row 2 : Education and experience */}
-            <div className='col-span-2 md:col-span-6 p-8 flex border-r border-b border-white/10 gap-8 items-center bg-white/[0.02]'>
+            <div className='col-span-12 md:col-span-9 xl:col-span-6 p-8 flex border-r border-b border-white/10 gap-8 items-center bg-white/[0.02]'>
 
               {/* School Logo */}
               <div className='col-span-2 p-8'>
@@ -218,7 +219,8 @@ export default async function Home({
 
             {/* Misc (1/2) */}
 
-            <div className='col-span-2 p-8 border-b border-r border-white/10 items-center'>
+            {/* Location Box */}
+            <div className='col-span-6 md:col-span-3 xl:col-span-2 p-8 border-b border-r border-white/10 items-center'>
               {/* //+ add location pin there */}
               <MdAddLocationAlt size={70} className='my-3 mx-auto' />
               <h4 className='text-xs font-bold uppercase text-gray-300 mb-2'>Location</h4>
@@ -226,7 +228,8 @@ export default async function Home({
               <p className='text-xs text-yellow-400/80 mt-1'>Willing to relocate in Canada</p>
             </div>
 
-            <div className='col-span-4 p-8 row-span-2 flex items-center justify-center'>
+            {/* CanadaMap Box */}
+            <div className='hidden xl:flex col-span-4 p-8 row-span-2 flex items-center justify-center'>
               {/* <CanadaMap size={400} className='mx-auto my-auto'/> */}
               <Image src={"/canada-ontario.png"} alt='Map of Canada highlighting Ontario' width={400} height={400} className='object-contain' />
             </div>
@@ -234,7 +237,8 @@ export default async function Home({
             {/* //+ make it checkered but visually pleasing as in some tile background lighter than others */}
             {/* //+ each tile should link to relevant sections */}
 
-            <div className='flex col-span-6 border-r border-white/10 p-8 group transition-all duration-300'>
+            {/* Experiences Box */}
+            <div className='flex col-span-12 md:col-span-9 xl:col-span-6 border-r border-white/10 p-8 group transition-all duration-300'>
               <div className='flex flex-col gap-4 w-full'>
                 <div className=''>
 
@@ -255,7 +259,7 @@ export default async function Home({
                 </div>
               </div>
 
-              <div className='flex items-center gap-6 object-cover flex-wrap md:flex-row md:flex-nowrap'>
+              <div className='flex flex-col md:flex-row items-center gap-6 flex-wrap justify-center '>
                 <Image src={"/about-icons/careerspace.png"} alt='' width={85} height={85} className='shrink-0 rounded-md' />
                 <Image src={"/about-icons/hireddd.png"} alt='' width={85} height={85} className='shrink-0 rounded-md' />
                 <Image src={"/about-icons/cois.png"} alt='Trent Computer science department' width={85} height={85} className='bg-white shrink-0 rounded-md ' />
@@ -264,7 +268,8 @@ export default async function Home({
             </div>
 
             {/* //+ when small screen turn proficiencies into a list without any descriptions, just icons atop */}
-            <div className='col-span-2 p-8 border-r border-white/10'>
+            {/* Languages Box */}
+            <div className='col-span-6 md:col-span-3 xl:col-span-2 p-8 border-b border-r border-white/10'>
               <IoLanguage size={75} className='my-3 mx-auto' />
               <h4 className='text-xs font-bold uppercase text-gray-300 mb-2'>Languages</h4>
 
@@ -301,7 +306,7 @@ export default async function Home({
         <section>
           <SectionHeading heading='Projects' />
           {/* <h2 className=''>Projects</h2> */}
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 m-4'>
             {
               projects.map(project => (
                 <div key={project.heading} className='flex h-full'>

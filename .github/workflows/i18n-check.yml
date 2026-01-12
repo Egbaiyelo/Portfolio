@@ -1,0 +1,24 @@
+name: I18n Integrity Check
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: # Allows you to run it manually
+
+jobs:
+  check-translations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Integrity Script
+        run: |
+          node -e "
+          const fs = require('fs');
+          const en = JSON.parse(fs.readFileSync('./portfolio-app/messages/en.json', 'utf8'));
+          const fr = JSON.parse(fs.readFileSync('./portfolio-app/messages/fr.json', 'utf8'));
+          const missing = Object.keys(en).filter(k => !Object.keys(fr).includes(k));
+          if (missing.length > 0) {
+            console.error('Missing keys:', missing);
+            process.exit(1); // Fails ONLY this workflow
+          }
+          "

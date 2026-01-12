@@ -5,9 +5,8 @@ export const dynamic = 'force-static';
 // export const revalidate = false;
 
 import Nav from '@/components/nav';
-import Footer from '@/components/footer';
-import { ExperienceItem, ProjectCard } from '@/components/Sections';
-import TechSkill from '@/components/tools';
+import { SectionHeading, Footer } from '@/components/composition';
+import { ExperienceItem, ProjectCard, TechSkill } from '@/components/Sections';
 
 import {
   SiTypescript, SiJavascript, SiCplusplus, SiOpenjdk, SiPython,
@@ -22,10 +21,7 @@ import { FaGitAlt } from "react-icons/fa6";
 import { FaDocker, FaLinux, FaExternalLinkAlt, FaBriefcase } from "react-icons/fa";
 import { IoExtensionPuzzle, IoLanguage, IoGameController } from "react-icons/io5";
 import { BsGlobe2 } from "react-icons/bs";
-import { SectionHeading } from '@/components/header';
-// import CanadaMap from './canadaMap';
 import TrentLogo from '../../components/svgs/TrentLogo';
-// import CanadaMap from '../../components/svgs/CanadaMap';
 // import { title } from 'process';
 
 // maybe move all lists to json file or so
@@ -209,7 +205,8 @@ export default async function Home({
                 </div>
 
                 {/* specializations, background in geo */}
-                <p className='text-sm text-gray-300'>Specialization in Software engineering and theoretical computing</p>
+                <p className='text-gray-300 mb-2 font-bold'>Trent University</p>
+                <p className='text-base text-gray-300 mb-2'>Specialization in Software engineering and theoretical computing</p>
                 {/* <p className='text-sm text-gray-300'>with a background in mathematics (graphs, probability)</p> */}
                 {/* <p className='text-sm text-gray-300'>and Geography (ArcGIS, mapping, satellite data)</p> */}
                 <div className='mt-2 inline-block px-2 py-1 bg-yellow-400/10 text-yellow-400 text-xs rounded'>3.9 GPA</div>

@@ -5,7 +5,6 @@ import { MdCode } from 'react-icons/md'
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { SiGithub } from "react-icons/si"
 
-
 interface ProjectProps {
     //   projectKey: string, // for intl
 
@@ -25,6 +24,17 @@ interface ExperienceProps {
     tools: string[];
 }
 
+type tech = Readonly<{ Icon: IconType, name: string, description?: string }>
+interface TechStackProps {
+    //   techStackKey: string, // for intl in future
+    Icon: IconType;
+    title: string;
+    techs: tech[];
+}
+
+// ############################# Project Card ####################################
+//#region ProjectCard
+
 export async function ProjectCard({ icons, link, heading, description, tags }: ProjectProps) {
 
     // how to do translation? all projects or each with specific one
@@ -32,7 +42,7 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
 
     return (
         //r was rounded 2rem
-        <div className='bg-[#D1D5DB] text-black rounded-[1rem] p-8 flex flex-col gap-6 w-full'>
+        <div className='bg-white/[0.1] border border-white/10 text-black rounded-[1rem] p-8 flex flex-col gap-6 w-full'>
 
             {/* image - extension, game, webapp etc */}
             <div className='flex justify-between items-start'>
@@ -82,7 +92,7 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
                 {tags.map((tag) => (
                     <span
                         key={tag}
-                        className="px-4 py-1 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+                        className="px-4 py-1 bg-yellow-400 text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
                     >
                         {tag}
                     </span>
@@ -97,6 +107,13 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
         </div>
     )
 }
+
+//#endregion
+
+
+
+// ############################# Experience Items ####################################
+//#region ExperienceItems
 
 export async function ExperienceItem({ title, date, organization, jobType, description, tools }: ExperienceProps) {
     return (
@@ -122,3 +139,53 @@ export async function ExperienceItem({ title, date, organization, jobType, descr
         </div>
     )
 }
+
+//#endregion
+
+
+
+// ############################# Tech Skill Container ####################################
+//#region
+
+/// A techskill container element
+export function TechSkill({ Icon, title, techs }: TechStackProps) {
+    const TitleIon = Icon ?? MdCode;
+
+    return (
+        <section className="mx-7 my-2 p-8 flex flex-col rounded-sm bg-[#202421]" aria-labelledby={`${title}-heading`}>
+
+            {/* Heading */}
+            <div className="font-bold flex items-center gap-2">
+                <TitleIon title={`${title}-icon`} size={40} />
+                <h3 id={`${title}-heading`} className="capitalize text-xl my-auto ml-2">{title}</h3>
+                <div className="mt-3 mb-4 h-2px bg-white/10" />
+            </div>
+
+            {/* tech list */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-6 mt-4">
+                {
+                    techs.map(tech => {
+                        const TechIcon = tech.Icon ?? MdCode;
+
+                        return (
+                            <div key={tech.name} className="group
+                             flex items-center gap-2 transition-all duration-200 ease-out text-gray-200 hover:scale-[1.03]"
+                             aria-label={`${tech.name}: ${tech.description ?? "Technology skill"}`}>
+                                <TechIcon title={`${tech.name} logo`} size={35} className='group-hover:text-yellow-400' />
+                                <div className="leading-tight my-auto">
+                                    <span className="capitalize font-semibold text-sm group-hover:text-yellow-400">{tech.name}</span>
+                                    {/* <div className="text-xs text-gray-400">{tech.description}</div> */}
+                                    {tech.description && (
+                                        <div className="text-xs text-gray-400 group-hover:text-gray-200">{tech.description}</div>
+                                    )}
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </section>
+    )
+}
+
+//#endregion

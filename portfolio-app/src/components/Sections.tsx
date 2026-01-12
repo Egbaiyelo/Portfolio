@@ -13,6 +13,7 @@ interface ProjectProps {
     heading: string;
     description: string;
     tags: string[];
+    github: string;
 }
 
 interface ExperienceProps {
@@ -20,7 +21,7 @@ interface ExperienceProps {
     date?: string;
     jobType?: string;
     organization: string;
-    description: string;
+    description: string[];
     tools: string[];
 }
 
@@ -30,6 +31,7 @@ interface TechStackProps {
     Icon: IconType;
     title: string;
     techs: tech[];
+
 }
 
 // ############################# Project Card ####################################
@@ -42,18 +44,28 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
 
     return (
         //r was rounded 2rem
-        <div className='bg-white/[0.1] border border-white/10 text-black rounded-[1rem] p-8 flex flex-col gap-6 w-full'>
+        //r bg-white/[0.1] border border-white/10 text-black rounded-[1rem] p-8 flex flex-col gap-6 w-full
+        <div className='bg-[#202421] 
+            backdrop-blur-md  w-full
+            border border-white/10 
+            rounded-2xl 
+            p-6 
+            flex flex-col gap-6
+            transition-all duration-300
+            hover:border-white/80
+            hover:translate-y-[-2px]'>
 
             {/* image - extension, game, webapp etc */}
             <div className='flex justify-between items-start'>
 
                 {/* //r was rounded 2xl  */}
-                <div className='bg-[#BFC3C9] p-3 rounded-xl flex space-x-4'>
+                {/* //r bg-[#BFC3C9] p-3 rounded-xl flex space-x-4 */}
+                <div className='p-2 rounded-lg bg-white/20 border border-white/10 flex space-x-4'>
 
                     {icons && icons.length > 0 ? (icons.map((Icon, index) => (
                         <Icon
                             key={index}
-                            className='object-cover'
+                            className='text-white/70'
                             title='project-icon'
                             size={32}
                         // default here too
@@ -73,7 +85,7 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
                 {/* Link to repo (if any) */}
                 {link && (
                     <div className='p-2 rounded-full cursor-pointer hover:bg-gray-400 transition'>
-                        <a href={link} target="_blank" rel='noopener noreferrer'><FaExternalLinkAlt title='open-link.png' size={25} /></a>
+                        <a href={link} target="_blank" rel='noopener noreferrer' className='ml-auto text-white/40 hover:text-white transition'><FaExternalLinkAlt title='open-link.png' size={25} /></a>
                     </div>
                 )}
             </div>
@@ -81,10 +93,10 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
             {/* Heading and description */}
             <div className='space-y-3'>
                 {/* Heading */}
-                <div className='text-3xl font-bold leading-tight tracking-tight'>{heading}</div>
+                <h3 className='text-2xl font-bold leading-tight tracking-tight text-yellow-400/90'>{heading}</h3>
 
                 {/* explain */}
-                <p className='text-[#4B5563] leading-relaxed text-lg'>{description}</p>
+                <p className='text-white/80 leading-relaxed text-lg'>{description}</p>
             </div>
 
             {/* tools used */}
@@ -92,7 +104,7 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
                 {tags.map((tag) => (
                     <span
                         key={tag}
-                        className="px-4 py-1 bg-yellow-400 text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+                        className="px-4 py-1 bg-white/20 text-sm font-medium rounded-full hover:bg-gray-800 transition-colors border border-white/10 text-white/90"
                     >
                         {tag}
                     </span>
@@ -100,10 +112,11 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
             </div>
 
             {/* Learn more */}
-            <button className="group relative w-full py-4 bg-[#BFC3C9] hover:bg-[#A8ADB5] text-[#374151] font-bold rounded-full transition-all duration-300 ease-in-out mt-auto  flex items-center justify-center gap-3 overflow-hidden hover:shadow-lg active:scale-95">
+            {/* //r      */}
+            <a className="group relative w-full py-4 bg-[#BFC3C9]/70 hover:bg-[#A8ADB5] text-[#374151] font-bold rounded-full transition-all duration-300 ease-in-out mt-auto flex items-center justify-center gap-3 overflow-hidden hover:shadow-lg active:scale-95 cursor-pointer">
                 <SiGithub size={30} className="transition-transform duration-300 group-hover:rotate-15" />
                 <p className='tracking-wide'>GitHub</p>
-            </button>
+            </a>
         </div>
     )
 }
@@ -117,24 +130,37 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
 
 export async function ExperienceItem({ title, date, organization, jobType, description, tools }: ExperienceProps) {
     return (
-        <div className="space-y-8 border-l-2 border-gray-700 ml-4 pl-8">
+        <div className="space-y-8 border-l-2 border-gray-700 ml-4 pl-8 pb-7">
 
             <div className="relative">
                 {/* The Dot on the timeline */}
                 <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-yellow-400 border-4 border-gray-900" />
 
-                <div className="flex flex-col md:flex-row md:justify-between mb-2">
+                <div className="flex flex-col md:flex-row md:justify-between mb-2 w-150">
                     <h3 className="text-xl font-bold text-gray-100">{title}</h3>
-                    <span className="text-yellow-400 font-mono text-sm">{date}</span>
+                    <span className="text-yellow-400 font-mono text-sm whitespace-nowrap">{date}</span>
                 </div>
 
-                <p className="text-gray-400 font-medium mb-3">`{organization} • {jobType}`</p>
+                <p className="text-gray-400 font-medium mb-3">{organization}{jobType && ` • ${jobType}`}</p>
 
-                <ul className="list-disc list-outside ml-4 text-gray-300 space-y-2 text-sm">
-                    <li>Developed responsive web applications using React and Tailwind CSS.</li>
+                <ul className="list-disc list-outside ml-4 text-gray-300 space-y-2 text-sm w-150">
+                    {
+                        description?.map((desc, index) => (
+                            <li key={index} className=''>{desc}</li>
+                        ))
+                    }
+                    {/* <li>Developed responsive web applications using React and Tailwind CSS.</li>
                     <li>Optimized performance resulting in a 40% faster load time.</li>
-                    <li>Led a team of 4 developers to ship a new dashboard product.</li>
+                    <li>Led a team of 4 developers to ship a new dashboard product.</li> */}
                 </ul>
+
+                <div className="flex flex-wrap gap-2 mt-4">
+                    {tools?.map((tool) => (
+                        <span key={tool} className="px-2 py-0.5 text-xs border border-gray-700 text-yellow-400 bg-gray-800/50 rounded">
+                            {tool}
+                        </span>
+                    ))}
+                </div>
             </div>
         </div>
     )
@@ -145,14 +171,14 @@ export async function ExperienceItem({ title, date, organization, jobType, descr
 
 
 // ############################# Tech Skill Container ####################################
-//#region
+//#region TechSkills
 
 /// A techskill container element
 export function TechSkill({ Icon, title, techs }: TechStackProps) {
     const TitleIon = Icon ?? MdCode;
 
     return (
-        <section className="mx-7 my-2 p-8 flex flex-col rounded-sm bg-[#202421]" aria-labelledby={`${title}-heading`}>
+        <section className="mx-7 my-2 p-8 flex flex-col rounded-sm bg-[#202421] border border-gray-800 w-[80%]" aria-labelledby={`${title}-heading`}>
 
             {/* Heading */}
             <div className="font-bold flex items-center gap-2">
@@ -170,7 +196,7 @@ export function TechSkill({ Icon, title, techs }: TechStackProps) {
                         return (
                             <div key={tech.name} className="group
                              flex items-center gap-2 transition-all duration-200 ease-out text-gray-200 hover:scale-[1.03]"
-                             aria-label={`${tech.name}: ${tech.description ?? "Technology skill"}`}>
+                                aria-label={`${tech.name}: ${tech.description ?? "Technology skill"}`}>
                                 <TechIcon title={`${tech.name} logo`} size={35} className='group-hover:text-yellow-400' />
                                 <div className="leading-tight my-auto">
                                     <span className="capitalize font-semibold text-sm group-hover:text-yellow-400">{tech.name}</span>

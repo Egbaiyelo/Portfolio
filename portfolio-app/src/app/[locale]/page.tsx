@@ -84,43 +84,62 @@ export default async function Home({
       icons: [],
       heading: 'File Service',
       description: 'owjf wfiaw  awifojage rgrjioar gwaeiog eagroig earjog eagoi er',
-      link: 'uwfe',
-      tags: ["nodejs", "microservice", "docker", "apis"]
+      link: '',
+      tags: ["nodejs", "microservice", "docker", "apis"],
+      github: 'https://github.com/egbaiyelo'
     },
     {
       icons: [IoExtensionPuzzle],  //extension
       heading: 'Browser-data extension',
       description: 'My Browser data extension',
       link: '',
-      tags: ["extension", "chromeapis", "js"]
+      tags: ["extension", "chromeapis", "js"],
+      github: 'https://github.com/egbaiyelo'
     },
     {
       icons: [IoExtensionPuzzle, BsGlobe2],  //webapp
       heading: 'Portfolio',
       description: 'My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface',
       link: '',
-      tags: ["nextjs", "intl", "graphics", "typescript"]
-    }
+      tags: ["nextjs", "intl", "graphics", "typescript"],
+      github: 'https://github.com/egbaiyelo/Porfolio'
+    },
+
   ]
 
   const experiences = [
     {
       title: "Grading assisstant",
+      date: "Jan 2025 - Apr 2025",
+      jobType: "Contract",
       organization: 'Trent University',
-      description: 'I was a grading assisstant for the Trent University Computer science department. Curating works of 100+ students across 3 term projects',
+      description: ['Evaluated and graded coursework for 100+ computer science students',
+        'Assessed web development work across 3 term projects with tools like JavaScript and APIs'
+      ],
       tools: ['js', 'apis', 'typescript', 'html', 'css', 'tailwind'],
     },
     {
       title: "Technical assisstant (co-op)",
+      date: "Sep 2024 - Apr 2025",
+      jobType: "Part-time",
       organization: "Trent University Careerspace",
-      description: "Worked with the school's careerspace department",
+      description: ["Optimized CMS workflows to align web resources with institutional objectives, increasing key page traffic.",
+        "Reduced deployment errors by training staff on Drupal CMS best practices and onboarding protocols.",
+        "Achieved WCAG accessibility compliance by refactoring site navigation and implementing hybrid media formats."],
       tools: ['drupal', 'html', 'css', 'cdn', 'canva'],
     },
     {
       title: "Web developer",
+      date: "Sep 2024 - Apr 2025",
+      jobType: "Part-time",
       organization: 'Hireddd.com',
-      description: "School placement",
-      tools: ['react', 'mongodb', 'express', 'js', 'nodejs', 'puppeteer']
+      description: ["Completed 8 months of out of school deployment for my software engineering project course",
+        "Reduced data bugs by 25% through database schema refactoring and business logic alignment.",
+        "Co-led a distributed team of 8 to deliver high-performance backend systems under tight deadlines.",
+        // "Co-led backend development and database design to meet stakeholder and performance requirements under tight deadlines with a team of 8 across Ontario.",
+        "Delivered middleware solutions 1 week ahead, leveraging RESTful APIs to integrate with third-party vendors."
+      ],
+      tools: ['react', 'mongodb', 'express', 'js', 'nodejs', 'puppeteer', 'figma']
     }
   ]
 
@@ -163,7 +182,7 @@ export default async function Home({
 
             {/* Top-Block 2: Systems */}
             {/* //+ add container */}
-            <div className=' md:justify-between col-span-12 md:col-span-4 group pt-2 px-8 md:p-8 md:border-b md:border-r border-white/10 hover:bg-white/5 transition-colors'>
+            <div className=' md:justify-between col-span-12 md:col-span-4 group pt-2 px-8 md:p-8 md:border-b md:border-r border-white/10 hover:bg-white/5 transition-colors '>
               <div className='flex gap-3 mb-4 text-gray-400 group-hover:text-blue-400 transition-colors'>
                 <FaLinux title='linux-icon' size={20} />
                 <SiCplusplus title='cpp-icon' size={20} />

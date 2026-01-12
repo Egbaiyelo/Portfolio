@@ -1,6 +1,7 @@
 // error page also has linktree
 
-import Image from "next/image";
+import { FaFileLines, FaGithub, FaLinkedin } from "react-icons/fa6";
+import { MdOutlineContactPage } from "react-icons/md";
 
 
 export default function LinkTreeComp() {
@@ -17,17 +18,17 @@ export default function LinkTreeComp() {
                 </div> */}
                 <div>
                     <a href="https://github.com/Egbaiyelo">
-                        <Image src={"/github.png"} alt="" width={50} height={50}></Image>
+                        <FaGithub title="Github link" size={50} />
                     </a>
                 </div>
                 <div>
                     <a href="https://www.linkedin.com/in/moteniola-egbaiyelo">
-                        <Image src={"/linkedin.png"} alt="" width={50} height={50}></Image>
+                        <FaLinkedin title="Linkeind Link" size={50} />
                     </a>
                 </div>
                 <div>
                     <a href="/documents/Resume_Egbaiyelo_Moteniola_Software_Developer.pdf" download={"Egbaiyelo_Moteniola_Resume.pdf"}>
-                        <Image src={"/github.png"} alt="" width={50} height={50}></Image>
+                        <MdOutlineContactPage title="Resume Link" size={50} />
                     </a>
                 </div>
             </div>

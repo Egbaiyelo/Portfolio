@@ -22,6 +22,9 @@ import { FaDocker, FaLinux, FaExternalLinkAlt, FaBriefcase } from "react-icons/f
 import { IoExtensionPuzzle, IoLanguage, IoGameController } from "react-icons/io5";
 import { BsGlobe2 } from "react-icons/bs";
 import TrentLogo from '../../components/svgs/TrentLogo';
+import { SiGraphql } from "react-icons/si";
+import { PiGraphicsCard } from "react-icons/pi";
+
 // import { title } from 'process';
 
 // maybe move all lists to json file or so
@@ -83,18 +86,18 @@ export default async function Home({
     {
       icons: [],
       heading: 'File Service',
-      description: 'owjf wfiaw  awifojage rgrjioar gwaeiog eagroig earjog eagoi er',
+      description: 'Developed modular microservices (compression, file processing) exposed via REST APIs and containerized complex file-processing logic for scalable deployment with a unified React frontend',
       link: '',
-      tags: ["nodejs", "microservice", "docker", "apis"],
+      tags: ["nodejs", "microservice", "docker", "apis", "react", "ASP.NET" ],
       github: 'https://github.com/egbaiyelo'
     },
     {
       icons: [IoExtensionPuzzle],  //extension
       heading: 'Browser-data extension',
-      description: 'My Browser data extension',
+      description: 'An extension to track tabs on the browser with key insights like number of windoes and incactive tabs',
       link: '',
       tags: ["extension", "chromeapis", "js"],
-      github: 'https://github.com/egbaiyelo'
+      github: 'https://github.com/egbaiyelo/Browser-data-extensions'
     },
     {
       icons: [IoExtensionPuzzle, BsGlobe2],  //webapp
@@ -102,7 +105,23 @@ export default async function Home({
       description: 'My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface',
       link: '',
       tags: ["nextjs", "intl", "graphics", "typescript"],
-      github: 'https://github.com/egbaiyelo/Porfolio'
+      github: 'https://github.com/egbaiyelo/Portfolio'
+    },
+    {
+      icons: [IoGameController],  //game
+      heading: 'Console Monopoly',
+      description: 'Monopoly Game with a Terminal User interface and player bots',
+      link: '',
+      tags: ["c#", "api", "json", "TUI"],
+      github: 'https://github.com/egbaiyelo/MonopolyConsole'
+    },
+    {
+      icons: [SiGraphql, PiGraphicsCard],  //webapp
+      heading: 'Terrain Generation',
+      description: 'Implemented procedural generation algorithms with WebGL and GLSL shaders for dynamic 3D environments',
+      link: '',
+      tags: ["javaScript", 'typescript', 'wasm', 'graphics', 'GLSL'],
+      github: 'https://github.com/egbaiyelo/Terrain-Project'
     },
 
   ]
@@ -322,6 +341,7 @@ export default async function Home({
         <section>
           <SectionHeading heading='Projects' />
           {/* <h2 className=''>Projects</h2> */}
+          {/* <p>Project list to highlight my range</p> */}
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 m-4'>
             {
               projects.map(project => (

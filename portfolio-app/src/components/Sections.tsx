@@ -37,30 +37,25 @@ interface TechStackProps {
 // ############################# Project Card ####################################
 //#region ProjectCard
 
-export async function ProjectCard({ icons, link, heading, description, tags }: ProjectProps) {
+export async function ProjectCard({ icons, link, heading, description, tags, github }: ProjectProps) {
 
     // how to do translation? all projects or each with specific one
     const t = await getTranslations('Projects');
 
     return (
         //r was rounded 2rem
+        //r bg-[#202421]
         //r bg-white/[0.1] border border-white/10 text-black rounded-[1rem] p-8 flex flex-col gap-6 w-full
-        <div className='bg-[#202421] 
-            backdrop-blur-md  w-full
-            border border-white/10 
-            rounded-2xl 
-            p-6 
-            flex flex-col gap-6
-            transition-all duration-300
-            hover:border-white/80
-            hover:translate-y-[-2px]'>
+        <div className='bg-black backdrop-blur-md  w-full border border-white/10 rounded-2xl p-8 
+            flex flex-col gap-6 transition-all duration-300 hover:border-yellow-400/50 hover:translate-y-[-4px] 
+             hover:shadow-[0_0_30px_-10px_rgba(250,204,21,0.3)]'>
 
             {/* image - extension, game, webapp etc */}
             <div className='flex justify-between items-start'>
 
                 {/* //r was rounded 2xl  */}
                 {/* //r bg-[#BFC3C9] p-3 rounded-xl flex space-x-4 */}
-                <div className='p-2 rounded-lg bg-white/20 border border-white/10 flex space-x-4'>
+                <div className='p-2 rounded-lg bg-gray-800/50 border border-white/10 flex space-x-4'>
 
                     {icons && icons.length > 0 ? (icons.map((Icon, index) => (
                         <Icon
@@ -96,7 +91,7 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
                 <h3 className='text-2xl font-bold leading-tight tracking-tight text-yellow-400/90'>{heading}</h3>
 
                 {/* explain */}
-                <p className='text-white/80 leading-relaxed text-lg'>{description}</p>
+                <p className='text-white/80 leading-relaxed text-base'>{description}</p>
             </div>
 
             {/* tools used */}
@@ -112,8 +107,8 @@ export async function ProjectCard({ icons, link, heading, description, tags }: P
             </div>
 
             {/* Learn more */}
-            {/* //r      */}
-            <a className="group relative w-full py-4 bg-[#BFC3C9]/70 hover:bg-[#A8ADB5] text-[#374151] font-bold rounded-full transition-all duration-300 ease-in-out mt-auto flex items-center justify-center gap-3 overflow-hidden hover:shadow-lg active:scale-95 cursor-pointer">
+            {/* //r  relative py-4 bg-[#BFC3C9]/70 hover:bg-[#A8ADB5] text-[#374151]  rounded-full transition-all duration-300 ease-in-out mt-auto flex items-center justify-center gap-3 overflow-hidden hover:shadow-lg active:scale-95 cursor-pointer    */}
+            <a href={github} className="group w-full py-2.5 bg-white text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-yellow-400 transition-colors mt-auto">
                 <SiGithub size={30} className="transition-transform duration-300 group-hover:rotate-15" />
                 <p className='tracking-wide'>GitHub</p>
             </a>

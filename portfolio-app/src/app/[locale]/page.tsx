@@ -24,6 +24,7 @@ import { BsGlobe2 } from "react-icons/bs";
 import TrentLogo from '../../components/svgs/TrentLogo';
 import { SiGraphql } from "react-icons/si";
 import { PiGraphicsCard } from "react-icons/pi";
+import { getPath } from '../../../utils/path';
 
 // import { title } from 'process';
 
@@ -159,7 +160,7 @@ export default async function Home({
             </div>
 
             {/* Top-Block 2: Systems */}
-            {/* //+ add container */}
+            {/* //+ add container icon */}
             <div className=' md:justify-between col-span-12 md:col-span-4 group pt-2 px-8 md:p-8 md:border-b md:border-r border-white/10 hover:bg-white/5 transition-colors '>
               <div className='flex gap-3 mb-4 text-gray-400 group-hover:text-blue-400 transition-colors'>
                 <FaLinux title='linux-icon' size={20} />
@@ -172,12 +173,12 @@ export default async function Home({
             </div>
 
             {/* Top-Block 3: Software engineering */}
-            {/* //+ add js */}
             {/* //+ merge location and canada, it becomes github contributions, github removes when canada map goes and small location takes over */}
             <div className='col-span-12 md:col-span-4 group pt-2 px-8 pb-2 md:p-8 border-b md:border-r-0 border-white/10 hover:bg-white/5 transition-colors'>
               <div className='flex gap-3 mb-4 text-gray-400 group-hover:text-yellow-400 transition-colors'>
                 <TbBrandCSharp title='csharp-brand' size={20} />
                 <SiTypescript title='typescript-icon' size={20} />
+                <SiJavascript title='javascript-icon' size={20} />
               </div>
               <h3 className='font-bold text-lg mb-2'>{ambRoles.software.title}</h3>
               <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>{ambRoles.software.desc}</p>
@@ -194,7 +195,6 @@ export default async function Home({
                 {/* className=' opacity-80' width={120} height={120} /> */}
               </div>
 
-              {/* //+! increase text size */}
               <div className='col-span-4 p-8'>
                 <div className='flex justify-between items-center mb-2'>
                   <span className='font-bold text-yellow-400'>{ambstats.degree}</span>
@@ -215,7 +215,6 @@ export default async function Home({
 
             {/* Location Box */}
             <div className='col-span-6 md:col-span-3 xl:col-span-2 p-8 border-b border-r border-white/10 items-center'>
-              {/* //+ add location pin there */}
               <MdAddLocationAlt size={70} className='my-3 mx-auto' />
               <h4 className='text-xs font-bold uppercase text-gray-300 mb-2'>Location</h4>
               <p className=''>{tAMB.rich('hero.stats.location', { bold: (chunks) => <strong>{chunks}</strong> })}</p>
@@ -223,9 +222,9 @@ export default async function Home({
             </div>
 
             {/* CanadaMap Box */}
-            <div className='hidden xl:flex col-span-4 p-8 row-span-2 flex items-center justify-center'>
+            <div className='hidden xl:flex col-span-4 p-8 row-span-2 flex items-center justify-center bg-white/[0.02]'>
               {/* <CanadaMap size={400} className='mx-auto my-auto'/> */}
-              <Image src={"/canada-ontario.png"} alt='Map of Canada highlighting Ontario' width={400} height={400} className='object-contain' />
+              <Image src={getPath("/canada-ontario.png")} alt='Map of Canada highlighting Ontario' width={400} height={400} className='object-contain' />
             </div>
 
             {/* //+ make it checkered but visually pleasing as in some tile background lighter than others */}
@@ -254,9 +253,9 @@ export default async function Home({
               </div>
 
               <div className='flex flex-col md:flex-row items-center gap-6 flex-wrap justify-center '>
-                <Image src={"/about-icons/careerspace.png"} alt='' width={85} height={85} className='shrink-0 rounded-md' />
-                <Image src={"/about-icons/hireddd.png"} alt='' width={85} height={85} className='shrink-0 rounded-md' />
-                <Image src={"/about-icons/cois.png"} alt='Trent Computer science department' width={85} height={85} className='bg-white shrink-0 rounded-md ' />
+                <Image src={getPath("/about-icons/careerspace.png")} alt='careerspace' width={85} height={85} className='shrink-0 rounded-md' />
+                <Image src={getPath("/about-icons/hireddd.png")} alt='hireddd.com' width={85} height={85} className='shrink-0 rounded-md' />
+                <Image src={getPath("/about-icons/cois.png")} alt='Trent Computer science department' width={85} height={85} className='bg-white shrink-0 rounded-md ' />
               </div>
 
             </div>
@@ -269,7 +268,7 @@ export default async function Home({
 
               <div className='text-sm flex gap-4'>
                 <span>English <span className='text-gray-500'>{`(${ambstats.native})`}</span></span>
-                <span>Francais <span className='text-gray-500'>(B1/B2)</span></span>
+                <span>Français <span className='text-gray-500'>(B1/B2)</span></span>
               </div>
 
             </div>

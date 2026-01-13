@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     unoptimized: true, 
   },
   basePath: isProd ? '/Portfolio' : '', 
-  assetPrefix: isProd ? '/Portfolio' : '',
+  // assetPrefix: isProd ? '/Portfolio' : '',
   // matcher: ['/', '/(fr|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)']
 };
 

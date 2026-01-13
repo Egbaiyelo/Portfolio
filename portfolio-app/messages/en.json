@@ -54,28 +54,31 @@
             }
         }
     },
-    "projects": [
-        {
-            "heading": "File Service",
-            "description": "Developed modular microservices (compression, file processing) exposed via REST APIs and containerized complex file-processing logic for scalable deployment with a unified React frontend"
-        },
-        {
-            "heading": "Browser-data extension",
-            "description": "An extension to track tabs on the browser with key insights like number of windows and inactive tabs"
-        },
-        {
-            "heading": "Portfolio",
-            "description": "My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface"
-        },
-        {
-            "heading": "Console Monopoly",
-            "description": "Monopoly Game with a Terminal User interface and player bots"
-        },
-        {
-            "heading": "Terrain Generation",
-            "description": "Implemented procedural generation algorithms with WebGL and GLSL shaders for dynamic 3D environments"
-        }
-    ],
+    "projects": {
+        "heading": "Projects",
+        "list": [
+            {
+                "heading": "File Service",
+                "description": "Developed modular microservices (compression, file processing) exposed via REST APIs and containerized complex file-processing logic for scalable deployment with a unified React frontend"
+            },
+            {
+                "heading": "Browser-data extension",
+                "description": "An extension to track tabs on the browser with key insights like number of windows and inactive tabs"
+            },
+            {
+                "heading": "Portfolio",
+                "description": "My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface"
+            },
+            {
+                "heading": "Console Monopoly",
+                "description": "Monopoly Game with a Terminal User interface and player bots"
+            },
+            {
+                "heading": "Terrain Generation",
+                "description": "Implemented procedural generation algorithms with WebGL and GLSL shaders for dynamic 3D environments"
+            }
+        ]
+    },
     "experiences": {
         "heading": "Experiences",
         "list": [

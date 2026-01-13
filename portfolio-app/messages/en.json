@@ -1,12 +1,13 @@
 {
-    "Homepage": {
+    "homepage": {
         "title": "The Silent Meridian",
-        "content": "English Abstract In the frost-bitten wilderness of the Canadian Rockies, climatologist Dr. Elena Vance discovers a rhythmic seismic pulse originating from deep within a supposedly dormant glacier. As she decodes the signal, she realizes it isn’t a natural phenomenon, but a countdown. When her research station is sabotaged and her team goes missing, Elena must flee across the tundra to protect her data. With a shadowy private military firm on her heels and a catastrophic geological event looming, she discovers that the 'meridian' is actually a bridge to a forgotten history—one that humanity was never meant to wake."
+        "content": "English Abstract In the frost-bitten wilderness of the Canadian Rockies, climatologist Dr. Elena Vance discovers a rhythmic seismic pulse originating from deep within a supposedly dormant glacier. As she decodes the signal, she realizes it isn’t a natural phenomenon, but a countdown. When her research station is sabotaged and her team goes missing, Elena must flee across the tundra to protect her data. With a shadowy private military firm on her heels and a catastrophic geological event looming, she discovers that the 'meridian' is actually a bridge to a forgotten history—one that humanity was never meant to wake.",
+        "technical-skills": "Technical Skills"
     },
-    "About": {
+    "about": {
         "title": "Hello"
     },
-    "Nav": {
+    "nav": {
         "overview": "Overview",
         "about": "About",
         "projects": "Projects",
@@ -14,21 +15,127 @@
         "resume": "Resume",
         "contact-me": "Contact me!"
     },
-    "Footer": {
+    "footer": {
         "contacts": "Contacts",
         "documents": "Documents",
         "resume": "Resume",
         "cv": "CV",
         "socials": "Socials"
     },
-    "Projects": {
-        "file-service": {
-            "title": "title",
-            "description": "description"
-        },
-        "browser-extension": {
-            "title": "title",
-            "description": "description"
+    "about-me-board": {
+        "heading": "About me board",
+        "hero": {
+            "roles": {
+                "fullStack": {
+                    "title": "Full Stack Developer",
+                    "desc": "Building scalable, user-centric applications with strong back-end logic and intuitive front-end design"
+                },
+                "systems": {
+                    "title": "Systems Engineer",
+                    "desc": "Architecting secure, reliable, and performant digital ecosystems with optimized tools and services."
+                },
+                "software": {
+                    "title": "Software engineer",
+                    "desc": "Developing usable, efficient, and scalable software solutions that prioritize user experience."
+                }
+            },
+            "stats": {
+                "expYears": "1+ years",
+                "expText": "Professional software experiences",
+                "location": "Based in <bold>Mississauga</bold>, Greater Toronto Area",
+                "relocate": "Willing to relocate in Canada",
+                "languages": "Languages",
+                "degree": "B.Sc Computer Science",
+                "university": "Trent University",
+                "specialization": "Specialization in Software engineering and theoretical computing",
+                "native": "native",
+                "gpa": "3.9 GPA",
+                "years": "2021–2025"
+            }
         }
+    },
+    "projects": [
+        {
+            "heading": "File Service",
+            "description": "Developed modular microservices (compression, file processing) exposed via REST APIs and containerized complex file-processing logic for scalable deployment with a unified React frontend"
+        },
+        {
+            "heading": "Browser-data extension",
+            "description": "An extension to track tabs on the browser with key insights like number of windows and inactive tabs"
+        },
+        {
+            "heading": "Portfolio",
+            "description": "My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface"
+        },
+        {
+            "heading": "Console Monopoly",
+            "description": "Monopoly Game with a Terminal User interface and player bots"
+        },
+        {
+            "heading": "Terrain Generation",
+            "description": "Implemented procedural generation algorithms with WebGL and GLSL shaders for dynamic 3D environments"
+        }
+    ],
+    "experiences": {
+        "heading": "Experiences",
+        "list": [
+            {
+                "title": "Grading Assistant",
+                "date": "Jan 2025 - Apr 2025",
+                "jobType": "Contract",
+                "organization": "Trent University",
+                "description": [
+                    "Evaluated and graded coursework for 100+ computer science students",
+                    "Assessed web development work across 3 term projects with tools like JavaScript and APIs"
+                ],
+                "tools": [
+                    "js",
+                    "apis",
+                    "typescript",
+                    "html",
+                    "css",
+                    "tailwind"
+                ]
+            },
+            {
+                "title": "Technical Assistant (co-op)",
+                "date": "Sep 2024 - Apr 2025",
+                "jobType": "Part-time",
+                "organization": "Trent University Careerspace",
+                "description": [
+                    "Optimized CMS workflows to align web resources with institutional objectives, increasing key page traffic.",
+                    "Reduced deployment errors by training staff on Drupal CMS best practices and onboarding protocols.",
+                    "Achieved WCAG accessibility compliance by refactoring site navigation and implementing hybrid media formats."
+                ],
+                "tools": [
+                    "drupal",
+                    "html",
+                    "css",
+                    "cdn",
+                    "canva"
+                ]
+            },
+            {
+                "title": "Web Developer",
+                "date": "Sep 2024 - Apr 2025",
+                "jobType": "Part-time",
+                "organization": "Hireddd.com",
+                "description": [
+                    "Completed 8 months of out of school deployment for my software engineering project course",
+                    "Reduced data bugs by 25% through database schema refactoring and business logic alignment.",
+                    "Co-led a distributed team of 8 to deliver high-performance backend systems under tight deadlines.",
+                    "Delivered middleware solutions 1 week ahead, leveraging RESTful APIs to integrate with third-party vendors."
+                ],
+                "tools": [
+                    "react",
+                    "mongodb",
+                    "express",
+                    "js",
+                    "nodejs",
+                    "puppeteer",
+                    "figma"
+                ]
+            }
+        ]
     }
 }

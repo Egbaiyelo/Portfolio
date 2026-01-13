@@ -1,12 +1,13 @@
 {
-    "Homepage": {
+    "homepage": {
         "title": "Le Méridien Silencieux",
-        "content": "Résumé en français Dans les étendues sauvages et glacées des Rocheuses canadiennes, la climatologue Elena Vance découvre une impulsion sismique rythmique provenant des profondeurs d'un glacier supposé dormant. En décodant le signal, elle réalise qu'il ne s'agit pas d'un phénomène naturel, mais d'un compte à rebours. Lorsque sa station de recherche est sabotée et que son équipe disparaît, Elena doit fuir à travers la toundra pour protéger ses données. Poursuivie par une firme militaire privée de l'ombre alors qu'un événement géologique catastrophique menace, elle découvre que le « méridien » est en réalité un pont vers une histoire oubliée que l'humanité n'aurait jamais dû réveiller."
+        "content": "Résumé en français Dans les étendues sauvages et glacées des Rocheuses canadiennes, la climatologue Elena Vance découvre une impulsion sismique rythmique provenant des profondeurs d'un glacier supposé dormant. En décodant le signal, elle réalise qu'il ne s'agit pas d'un phénomène naturel, mais d'un compte à rebours. Lorsque sa station de recherche est sabotée et que son équipe disparaît, Elena doit fuir à travers la toundra pour protéger ses données. Poursuivie par une firme militaire privée de l'ombre alors qu'un événement géologique catastrophique menace, elle découvre que le « méridien » est en réalité un pont vers une histoire oubliée que l'humanité n'aurait jamais dû réveiller.",
+        "technical-skills": "Compétences techniques"
     },
-    "About": {
+    "about": {
         "title": "salut"
     },
-    "Nav": {
+    "nav": {
         "overview": "Aperçu",
         "about": "À propos",
         "projects": "Projets",
@@ -14,11 +15,130 @@
         "resume": "Résumé",
         "contact-me": "contactez-moi!"
     },
-    "Footer": {
+    "footer": {
         "contacts": "Contacts",
         "documents": "Documents",
         "resume": "Résumé",
         "cv": "CV",
         "socials": "Réseaux sociaux"
+    },
+    "about-me-board": {
+        "heading": "Tableau à propos de moi",
+        "hero": {
+            "roles": {
+                "fullStack": {
+                    "title": "Développeur Full Stack",
+                    "desc": "Création d'applications évolutives et centrées sur l'utilisateur avec une logique backend solide et un design frontend intuitif."
+                },
+                "systems": {
+                    "title": "Ingénieur Systèmes",
+                    "desc": "Architecture d'écosystèmes numériques sécurisés, fiables et performants avec des outils et services optimisés."
+                },
+                "software": {
+                    "title": "Ingénieur Logiciel",
+                    "desc": "Développement de solutions logicielles utilisables, efficaces et évolutives qui priorisent l'expérience utilisateur."
+                }
+            },
+            "stats": {
+                "expYears": "1+ ans",
+                "expText": "Expériences logicielles professionnelles",
+                "location": "Basé à <bold>Mississauga</bold>, région du Grand Toronto",
+                "relocate": "Prêt à déménager au Canada",
+                "languages": "Langues",
+                "degree": "B.Sc. en informatique",
+                "university": "Université Trent",
+                "specialization": "Spécialisation en génie logiciel et informatique théorique",
+                "native": "linu. nat.",
+                "gpa": "Moyenne de 3,9",
+                "years": "2021 à 2025"
+            }
+        }
+    },
+    "projects": {
+        "heading": "projets",
+        "list": [
+            {
+                "heading": "Service de Fichiers",
+                "description": "Développement de microservices modulaires (compression, traitement de fichiers) exposés via des API REST et conteneurisation de la logique de traitement pour un déploiement évolutif."
+            },
+            {
+                "heading": "Extension de données navigateur",
+                "description": "Une extension pour suivre les onglets du navigateur avec des informations clés comme le nombre de fenêtres et les onglets inactifs."
+            },
+            {
+                "heading": "Portfolio",
+                "description": "Mon site de portfolio personnel hébergé sur GitHub Pages avec un design intuitif et accessible."
+            },
+            {
+                "heading": "Monopoly en Console",
+                "description": "Jeu de Monopoly avec une interface utilisateur textuelle (TUI) et des joueurs robots."
+            },
+            {
+                "heading": "Génération de Terrain",
+                "description": "Mise en œuvre d'algorithmes de génération procédurale avec WebGL et des shaders GLSL pour des environnements 3D dynamiques."
+            }
+        ]
+    },
+    "experiences": {
+        "heading": "Expériences",
+        "list": [
+            {
+                "title": "Assistant à la correction",
+                "date": "Janv 2025 - Avr 2025",
+                "jobType": "Contrat",
+                "organization": "Université Trent",
+                "description": [
+                    "Évalué et noté les travaux de plus de 100 étudiants en informatique",
+                    "Évalué le développement web sur 3 projets de fin d'études avec des outils comme JavaScript et les APIs"
+                ],
+                "tools": [
+                    "js",
+                    "apis",
+                    "typescript",
+                    "html",
+                    "css",
+                    "tailwind"
+                ]
+            },
+            {
+                "title": "Assistant technique (stage coop)",
+                "date": "Sept 2024 - Avr 2025",
+                "jobType": "Temps partiel",
+                "organization": "Trent University Careerspace",
+                "description": [
+                    "Optimisation des flux de travail du CMS pour aligner les ressources web sur les objectifs institutionnels.",
+                    "Réduction des erreurs de déploiement en formant le personnel aux meilleures pratiques de Drupal.",
+                    "Respect de la conformité d'accessibilité WCAG en refactorisant la navigation du site."
+                ],
+                "tools": [
+                    "drupal",
+                    "html",
+                    "css",
+                    "cdn",
+                    "canva"
+                ]
+            },
+            {
+                "title": "Développeur Web",
+                "date": "Sept 2024 - Avr 2025",
+                "jobType": "Temps partiel",
+                "organization": "Hireddd.com",
+                "description": [
+                    "Réalisation de 8 mois de déploiement hors campus pour mon cours de projet de génie logiciel",
+                    "Réduction des bogues de données de 25% grâce à la refonte du schéma de base de données.",
+                    "Co-direction d'une équipe distribuée de 8 personnes pour livrer des systèmes backend haute performance.",
+                    "Livraison de solutions middleware avec une semaine d'avance, utilisant des API REST."
+                ],
+                "tools": [
+                    "react",
+                    "mongodb",
+                    "express",
+                    "js",
+                    "nodejs",
+                    "puppeteer",
+                    "figma"
+                ]
+            }
+        ]
     }
 }

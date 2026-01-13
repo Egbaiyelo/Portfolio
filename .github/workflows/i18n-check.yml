@@ -19,6 +19,6 @@ jobs:
           const missing = Object.keys(en).filter(k => !Object.keys(fr).includes(k));
           if (missing.length > 0) {
             console.error('Missing keys:', missing);
-            process.exit(1); // Fails ONLY this workflow
+            process.exit(1); 
           }
           "

@@ -5,7 +5,7 @@ import { MdCode } from 'react-icons/md'
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { SiGithub } from "react-icons/si"
 
-interface ProjectProps {
+export interface ProjectProps {
     //   projectKey: string, // for intl
 
     icons: IconType[];
@@ -16,7 +16,7 @@ interface ProjectProps {
     github: string;
 }
 
-interface ExperienceProps {
+export interface ExperienceProps {
     title: string;
     date?: string;
     jobType?: string;
@@ -39,8 +39,8 @@ interface TechStackProps {
 
 export async function ProjectCard({ icons, link, heading, description, tags, github }: ProjectProps) {
 
-    // how to do translation? all projects or each with specific one
-    const t = await getTranslations('Projects');
+    // const t = await getTranslations('Projects');
+        const safeId = heading.replace(/\s+/g, '-').toLowerCase();
 
     return (
         //r was rounded 2rem
@@ -48,7 +48,7 @@ export async function ProjectCard({ icons, link, heading, description, tags, git
         //r bg-white/[0.1] border border-white/10 text-black rounded-[1rem] p-8 flex flex-col gap-6 w-full
         <div className='bg-black backdrop-blur-md  w-full border border-white/10 rounded-2xl p-8 
             flex flex-col gap-6 transition-all duration-300 hover:border-yellow-400/50 hover:translate-y-[-4px] 
-             hover:shadow-[0_0_30px_-10px_rgba(250,204,21,0.3)]'>
+             hover:shadow-[0_0_30px_-10px_rgba(250,204,21,0.3)]' aria-labelledby={safeId}>
 
             {/* image - extension, game, webapp etc */}
             <div className='flex justify-between items-start'>
@@ -88,7 +88,7 @@ export async function ProjectCard({ icons, link, heading, description, tags, git
             {/* Heading and description */}
             <div className='space-y-3'>
                 {/* Heading */}
-                <h3 className='text-2xl font-bold leading-tight tracking-tight text-yellow-400/90'>{heading}</h3>
+                <h3 id={safeId} className='text-2xl font-bold leading-tight tracking-tight text-yellow-400/90 capitalize'>{heading}</h3>
 
                 {/* explain */}
                 <p className='text-white/80 leading-relaxed text-base'>{description}</p>
@@ -124,21 +124,23 @@ export async function ProjectCard({ icons, link, heading, description, tags, git
 //#region ExperienceItems
 
 export async function ExperienceItem({ title, date, organization, jobType, description, tools }: ExperienceProps) {
+    const safeId = title.replace(/\s+/g, '-').toLowerCase();
+
     return (
-        <div className="space-y-8 border-l-2 border-gray-700 ml-4 pl-8 pb-7">
+        <article className="space-y-8 border-l-2 border-gray-700 ml-4 pl-8 pb-7" aria-labelledby={`${safeId}`}>
 
             <div className="relative">
                 {/* The Dot on the timeline */}
-                <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-yellow-400 border-4 border-gray-900" />
+                <div aria-hidden="true" className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-yellow-400 border-4 border-gray-900" />
 
-                <div className="flex flex-col md:flex-row md:justify-between mb-2 w-150">
-                    <h3 className="text-xl font-bold text-gray-100">{title}</h3>
+                <div className="flex flex-col md:flex-row md:justify-between mb-2 max-w-150">
+                    <h3 id={`${safeId}`} className="text-xl font-bold text-gray-100 capitalize">{title}</h3>
                     <span className="text-yellow-400 font-mono text-sm whitespace-nowrap">{date}</span>
                 </div>
 
-                <p className="text-gray-400 font-medium mb-3">{organization}{jobType && ` • ${jobType}`}</p>
+                <p className="text-gray-400 font-medium mb-3 capitalize">{organization}{jobType && ` • ${jobType}`}</p>
 
-                <ul className="list-disc list-outside ml-4 text-gray-300 space-y-2 text-sm w-150">
+                <ul className="list-disc list-outside ml-4 text-gray-300 space-y-2 text-sm max-w-150" role="list">
                     {
                         description?.map((desc, index) => (
                             <li key={index} className=''>{desc}</li>
@@ -149,7 +151,7 @@ export async function ExperienceItem({ title, date, organization, jobType, descr
                     <li>Led a team of 4 developers to ship a new dashboard product.</li> */}
                 </ul>
 
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2 mt-4" aria-label="Technologies used">
                     {tools?.map((tool) => (
                         <span key={tool} className="px-2 py-0.5 text-xs border border-gray-700 text-yellow-400 bg-gray-800/50 rounded">
                             {tool}
@@ -157,7 +159,7 @@ export async function ExperienceItem({ title, date, organization, jobType, descr
                     ))}
                 </div>
             </div>
-        </div>
+        </article>
     )
 }
 

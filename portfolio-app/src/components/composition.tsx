@@ -36,10 +36,10 @@ function copyToClipboard() {
 
 export async function Footer() {
 
-    const t = await getTranslations('Footer');
+    const t = await getTranslations('footer');
 
     return (
-        <footer className="m-4 flex flex-row justify-between [&>*]:pb-4 m-8 p-7 border-t border-solid border-[#ccc]" >
+        <footer id='footer' className="m-4 flex flex-col md:flex-row justify-between [&>*]:pb-4 m-8 p-7 border-t border-solid border-[#ccc]" >
 
             {/* <p>© {new Date().getFullYear()} My Next App</p> */}
             {/* email, number, 

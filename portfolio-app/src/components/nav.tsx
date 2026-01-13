@@ -12,7 +12,7 @@ export default async function Nav() {
 
     //*+ when width smaller, only icon and contact remain
 
-    const t = await getTranslations('Nav');
+    const t = await getTranslations('nav');
 
     return (
         <nav className="sticky top-0 z-10 flex flex-row items-center w-full bg-black"
@@ -37,14 +37,14 @@ export default async function Nav() {
             </ul>
 
             {/* localeswitcher */}
-            {/* <div className="px-4">
+            <div className="px-4">
                 <LocaleSwitcher />
-            </div> */}
+            </div>
 
             {/* contact button */}
-            {/* <button className="px-4 py-2 bg-blue-500 text-white rounded">
+            <a href="#footer" className="px-4 py-2 bg-blue-500 text-white rounded">
                 {t("contact-me")}
-            </button> */}
+            </a>
         </nav>
     );
 }

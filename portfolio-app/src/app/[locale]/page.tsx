@@ -6,7 +6,7 @@ export const dynamic = 'force-static';
 
 import Nav from '@/components/nav';
 import { SectionHeading, Footer } from '@/components/composition';
-import { ExperienceItem, ProjectCard, TechSkill } from '@/components/Sections';
+import { ExperienceItem, ExperienceProps, ProjectCard, ProjectProps, TechSkill } from '@/components/Sections';
 
 import {
   SiTypescript, SiJavascript, SiCplusplus, SiOpenjdk, SiPython,
@@ -27,7 +27,7 @@ import { PiGraphicsCard } from "react-icons/pi";
 
 // import { title } from 'process';
 
-// maybe move all lists to json file or so
+//+ maybe move all lists to json file or so
 
 export default async function Home({
   params
@@ -38,7 +38,16 @@ export default async function Home({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations('Homepage');
+  const t = await getTranslations('homepage');
+  const tAMB = await getTranslations('about-me-board');
+  const ambRoles = tAMB.raw('hero.roles');
+  const ambstats = tAMB.raw('hero.stats');
+
+  const tExp = await getTranslations('experiences');
+  const experiencesArray = tExp.raw('list') as ExperienceProps[];
+
+  const tProj = await getTranslations('projects');
+  const projectsArray = tProj.raw('list') as { heading: string, description: string }[];
 
   const skillGroups = [
     {
@@ -82,90 +91,40 @@ export default async function Home({
     }
   ];
 
-  const projects = [
+  const project_config = [
     {
-      icons: [],
-      heading: 'File Service',
-      description: 'Developed modular microservices (compression, file processing) exposed via REST APIs and containerized complex file-processing logic for scalable deployment with a unified React frontend',
-      link: '',
-      tags: ["nodejs", "microservice", "docker", "apis", "react", "ASP.NET" ],
+      id: 0, icons: [], link: '',
+      tags: ["nodejs", "microservice", "docker", "apis", "react", "ASP.NET"],
       github: 'https://github.com/egbaiyelo'
     },
     {
-      icons: [IoExtensionPuzzle],  //extension
-      heading: 'Browser-data extension',
-      description: 'An extension to track tabs on the browser with key insights like number of windoes and incactive tabs',
-      link: '',
+      id: 1, icons: [IoExtensionPuzzle], link: '',
       tags: ["extension", "chromeapis", "js"],
       github: 'https://github.com/egbaiyelo/Browser-data-extensions'
     },
     {
-      icons: [IoExtensionPuzzle, BsGlobe2],  //webapp
-      heading: 'Portfolio',
-      description: 'My personal portfolio site hosted with github pages with intuitive and accessible design, also showcasing a clean user interface',
-      link: '',
+      id: 2, icons: [IoExtensionPuzzle, BsGlobe2], link: '',
       tags: ["nextjs", "intl", "graphics", "typescript"],
       github: 'https://github.com/egbaiyelo/Portfolio'
     },
     {
-      icons: [IoGameController],  //game
-      heading: 'Console Monopoly',
-      description: 'Monopoly Game with a Terminal User interface and player bots',
-      link: '',
+      id: 3, icons: [IoGameController], link: '',
       tags: ["c#", "api", "json", "TUI"],
       github: 'https://github.com/egbaiyelo/MonopolyConsole'
     },
     {
-      icons: [SiGraphql, PiGraphicsCard],  //webapp
-      heading: 'Terrain Generation',
-      description: 'Implemented procedural generation algorithms with WebGL and GLSL shaders for dynamic 3D environments',
-      link: '',
+      id: 4, icons: [SiGraphql, PiGraphicsCard], link: '',
       tags: ["javaScript", 'typescript', 'wasm', 'graphics', 'GLSL'],
       github: 'https://github.com/egbaiyelo/Terrain-Project'
     },
+  ];
 
-  ]
 
-  const experiences = [
-    {
-      title: "Grading assisstant",
-      date: "Jan 2025 - Apr 2025",
-      jobType: "Contract",
-      organization: 'Trent University',
-      description: ['Evaluated and graded coursework for 100+ computer science students',
-        'Assessed web development work across 3 term projects with tools like JavaScript and APIs'
-      ],
-      tools: ['js', 'apis', 'typescript', 'html', 'css', 'tailwind'],
-    },
-    {
-      title: "Technical assisstant (co-op)",
-      date: "Sep 2024 - Apr 2025",
-      jobType: "Part-time",
-      organization: "Trent University Careerspace",
-      description: ["Optimized CMS workflows to align web resources with institutional objectives, increasing key page traffic.",
-        "Reduced deployment errors by training staff on Drupal CMS best practices and onboarding protocols.",
-        "Achieved WCAG accessibility compliance by refactoring site navigation and implementing hybrid media formats."],
-      tools: ['drupal', 'html', 'css', 'cdn', 'canva'],
-    },
-    {
-      title: "Web developer",
-      date: "Sep 2024 - Apr 2025",
-      jobType: "Part-time",
-      organization: 'Hireddd.com',
-      description: ["Completed 8 months of out of school deployment for my software engineering project course",
-        "Reduced data bugs by 25% through database schema refactoring and business logic alignment.",
-        "Co-led a distributed team of 8 to deliver high-performance backend systems under tight deadlines.",
-        // "Co-led backend development and database design to meet stakeholder and performance requirements under tight deadlines with a team of 8 across Ontario.",
-        "Delivered middleware solutions 1 week ahead, leveraging RESTful APIs to integrate with third-party vendors."
-      ],
-      tools: ['react', 'mongodb', 'express', 'js', 'nodejs', 'puppeteer', 'figma']
-    }
-  ]
 
   return (
     <>
       <Nav />
-      <div className='ml-20'>
+      <div className='ml-5 md:ml-20'>
         {/* maybe number them
         1 about me (full stack & systems), based, school, fav lang, years exp, langs
         2 tech 
@@ -179,7 +138,7 @@ export default async function Home({
 
 
         <section className='text-white border-white/10 pt-12'>
-          <SectionHeading heading='About me Board' />
+          <SectionHeading heading={tAMB('heading')} />
 
           {/* About me Container */}
           <div className='m-4 grid grid-cols-12 gap-0 border border-white/10 rounded-xl overflow-hidden grid-flow-row-dense'>
@@ -195,8 +154,8 @@ export default async function Home({
                 <SiDotnet title='dotnet-icon' size={20} />
                 <SiJavascript title='js-icon' size={20} />
               </div>
-              <h3 className='font-bold text-lg mb-2'>Full Stack Developer</h3>
-              <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>Building scalable, user-centric applications with strong back-end logic and intuitive front-end design</p>
+              <h3 className='font-bold text-lg mb-2'>{ambRoles.fullStack.title}</h3>
+              <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>{ambRoles.fullStack.desc}</p>
             </div>
 
             {/* Top-Block 2: Systems */}
@@ -208,8 +167,8 @@ export default async function Home({
                 <SiDocker title='docker-icon' size={20} />
                 <SiPython title='python-icon' size={20} />
               </div>
-              <h3 className='font-bold text-lg mb-2'>Systems Engineer</h3>
-              <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>Architecting secure, reliable, and performant digital ecosystems with optimized tools and services.</p>
+              <h3 className='font-bold text-lg mb-2'>{ambRoles.systems.title}</h3>
+              <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>{ambRoles.systems.desc}</p>
             </div>
 
             {/* Top-Block 3: Software engineering */}
@@ -220,8 +179,8 @@ export default async function Home({
                 <TbBrandCSharp title='csharp-brand' size={20} />
                 <SiTypescript title='typescript-icon' size={20} />
               </div>
-              <h3 className='font-bold text-lg mb-2'>Software engineer</h3>
-              <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>Developing usable, efficient, and scalable software solutions that prioritize user experience.</p>
+              <h3 className='font-bold text-lg mb-2'>{ambRoles.software.title}</h3>
+              <p className='hidden lg:block text-sm text-gray-400 leading-relaxed'>{ambRoles.software.desc}</p>
             </div>
 
 
@@ -238,16 +197,16 @@ export default async function Home({
               {/* //+! increase text size */}
               <div className='col-span-4 p-8'>
                 <div className='flex justify-between items-center mb-2'>
-                  <span className='font-bold text-yellow-400'>B.Sc Computer Science</span>
-                  <span className='text-xs font-mono text-gray-200'>2021-2025</span>
+                  <span className='font-bold text-yellow-400'>{ambstats.degree}</span>
+                  <span className='text-xs font-mono text-gray-200'>{ambstats.years}</span>
                 </div>
 
                 {/* specializations, background in geo */}
-                <p className='text-gray-300 mb-2 font-bold'>Trent University</p>
-                <p className='text-base text-gray-300 mb-2'>Specialization in Software engineering and theoretical computing</p>
+                <p className='text-gray-300 mb-2 font-bold'>{ambstats.university}</p>
+                <p className='text-base text-gray-300 mb-2'>{ambstats.specialization}</p>
                 {/* <p className='text-sm text-gray-300'>with a background in mathematics (graphs, probability)</p> */}
                 {/* <p className='text-sm text-gray-300'>and Geography (ArcGIS, mapping, satellite data)</p> */}
-                <div className='mt-2 inline-block px-2 py-1 bg-yellow-400/10 text-yellow-400 text-xs rounded'>3.9 GPA</div>
+                <div className='mt-2 inline-block px-2 py-1 bg-yellow-400/10 text-yellow-400 text-xs rounded'>{ambstats.gpa}</div>
                 {/* <div className='mt-2 inline-block px-2 py-1 bg-yellow-400/10 text-yellow-400 text-xs rounded'>Presidents honour roll</div> */}
               </div>
             </div>
@@ -259,8 +218,8 @@ export default async function Home({
               {/* //+ add location pin there */}
               <MdAddLocationAlt size={70} className='my-3 mx-auto' />
               <h4 className='text-xs font-bold uppercase text-gray-300 mb-2'>Location</h4>
-              <p className=''>Based in <strong>Mississauga</strong>, Greater Toronto Area</p>
-              <p className='text-xs text-yellow-400/80 mt-1'>Willing to relocate in Canada</p>
+              <p className=''>{tAMB.rich('hero.stats.location', { bold: (chunks) => <strong>{chunks}</strong> })}</p>
+              <p className='text-xs text-yellow-400/80 mt-1'>{ambstats.relocate}</p>
             </div>
 
             {/* CanadaMap Box */}
@@ -280,10 +239,10 @@ export default async function Home({
                   <p className='text-lg mb-3 font-bold'>
                     <span className='flex items-center gap-3 mb-1 transition-colors duration-300 group-hover:text-[#FFD700]'>
                       <FaBriefcase size={40} />
-                      <span className='block tracking-tighter text-4xl font-bold'>1+ years</span>
+                      <span className='block tracking-tighter text-4xl font-bold'>{ambstats.expYears}</span>
                     </span>
 
-                    Professional software experiences
+                    {ambstats.expText}
                   </p>
 
                   <ul className='text-base space-y-1'>
@@ -306,11 +265,11 @@ export default async function Home({
             {/* Languages Box */}
             <div className='col-span-6 md:col-span-3 xl:col-span-2 p-8 border-b border-r border-white/10'>
               <IoLanguage size={75} className='my-3 mx-auto' />
-              <h4 className='text-xs font-bold uppercase text-gray-300 mb-2'>Languages</h4>
+              <h4 className='text-xs font-bold uppercase text-gray-300 mb-2'>{ambstats.languages}</h4>
 
               <div className='text-sm flex gap-4'>
-                <span>English <span className='text-gray-500'>(Native)</span></span>
-                <span>French <span className='text-gray-500'>(B1/B2)</span></span>
+                <span>English <span className='text-gray-500'>{`(${ambstats.native})`}</span></span>
+                <span>Francais <span className='text-gray-500'>(B1/B2)</span></span>
               </div>
 
             </div>
@@ -339,25 +298,27 @@ export default async function Home({
 
         {/* Projects section */}
         <section>
-          <SectionHeading heading='Projects' />
+          <SectionHeading heading={tProj('heading')} />
           {/* <h2 className=''>Projects</h2> */}
           {/* <p>Project list to highlight my range</p> */}
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 m-4'>
             {
-              projects.map(project => (
-                <div key={project.heading} className='flex h-full'>
-                  <ProjectCard {...project} />
-                </div>
-              ))
+              project_config.map((project, index) => {
+                console.log({ "project": projectsArray, "config": project }); return (
+                  <div key={projectsArray[index].heading} className='flex h-full'>
+                    <ProjectCard {...project} {...projectsArray[index]} />
+                  </div>
+                )
+              })
             }
           </div>
         </section>
 
         <section>
-          <SectionHeading heading='Experiences' />
+          <SectionHeading heading={tExp('heading')} />
           <div>
             {
-              experiences.map((experience, expIndex) => (
+              experiencesArray.map((experience, expIndex) => (
                 <ExperienceItem key={expIndex} {...experience} />
               ))
             }
@@ -371,7 +332,7 @@ export default async function Home({
 
         {/* Technical skills */}
         <section>
-          <SectionHeading heading='Technical Skills' />
+          <SectionHeading heading={t('technical-skills')} />
           <div className=''>
             {
               skillGroups.map(skill => (

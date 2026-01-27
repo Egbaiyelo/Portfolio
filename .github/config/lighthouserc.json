@@ -1,0 +1,11 @@
+{
+  "ci": {
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", {"minScore": 0.9}],
+        "categories:accessibility": ["warn", {"minScore": 1.0}],
+        "dom-size": ["warn", {"maxNumericValue": 3000}]
+      }
+    }
+  }
+}

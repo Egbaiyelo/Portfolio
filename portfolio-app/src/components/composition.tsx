@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 
 
+
 export function Header() {
     return (
         <header style={{ marginTop: '2rem', padding: '1rem', borderTop: '1px solid #ccc', textAlign: 'center' }}>
@@ -111,3 +112,5 @@ export async function Footer() {
         </footer>
     );
 }
+
+

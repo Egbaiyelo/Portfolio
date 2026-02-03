@@ -18,7 +18,7 @@ import {
 import { TbBrandCSharp } from "react-icons/tb";
 import { MdCode, MdWeb, MdBugReport, MdCloudQueue, MdAddLocationAlt, MdLocationDisabled } from 'react-icons/md';
 import { FaGitAlt } from "react-icons/fa6";
-import { FaDocker, FaLinux, FaExternalLinkAlt, FaBriefcase } from "react-icons/fa";
+import { FaDocker, FaLinux, FaExternalLinkAlt, FaBriefcase, FaCookieBite  } from "react-icons/fa";
 import { IoExtensionPuzzle, IoLanguage, IoGameController } from "react-icons/io5";
 import { BsGlobe2 } from "react-icons/bs";
 import TrentLogo from '../../components/svgs/TrentLogo';

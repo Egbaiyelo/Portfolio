@@ -7,6 +7,8 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from "@/i18n/navigation";
 import { sendGAEvent } from '@next/third-parties/google';
 import { GAWrapper } from "./GAWrappers";
+import Image from "next/image";
+
 
 
 export default async function Nav() {
@@ -22,8 +24,9 @@ export default async function Nav() {
             style={{ padding: '1rem', borderTop: '1px solid #ccc', textAlign: 'center' }}>
 
             {/* icon */}
-            <div className="">
-                Egbaiyelo
+            <div className="flex gap-2">
+                <Image src={"identicon.png"} width={24} height={24} alt="me"/>
+                <p>~ Egbaiyelo ~</p>
             </div>
 
             {/* directions - about... */}

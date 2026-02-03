@@ -303,7 +303,8 @@ export default async function Home({
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 m-4'>
             {
               project_config.map((project, index) => {
-                console.log({ "project": projectsArray, "config": project }); return (
+                // console.log({ "project": projectsArray, "config": project }); 
+                return (
                   <div key={projectsArray[index].heading} className='flex h-full'>
                     <ProjectCard {...project} {...projectsArray[index]} />
                   </div>

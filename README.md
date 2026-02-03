@@ -15,7 +15,9 @@ You can view the live site here: <https://egbaiyelo.github.io/Portfolio/>
 <!-- - Animations -> ... -->
 - Hero Grid site summary
 - Internationalization -> The page can easily be converted from English to French using the bar at the top, <!-- img--> the project uses `next-intl`
+
 ![Next-intl-switcher](./img/next-intl-switch.png)
+
 - Google analytics -> The site uses google analytics and GA component wrappers to improve experiences
 <!-- - Graphics -> ... -->
 <!-- - ... -->

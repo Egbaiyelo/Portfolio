@@ -18,7 +18,7 @@ import {
 import { TbBrandCSharp } from "react-icons/tb";
 import { MdCode, MdWeb, MdBugReport, MdCloudQueue, MdAddLocationAlt, MdLocationDisabled } from 'react-icons/md';
 import { FaGitAlt } from "react-icons/fa6";
-import { FaDocker, FaLinux, FaExternalLinkAlt, FaBriefcase } from "react-icons/fa";
+import { FaDocker, FaLinux, FaExternalLinkAlt, FaBriefcase, FaCookieBite  } from "react-icons/fa";
 import { IoExtensionPuzzle, IoLanguage, IoGameController } from "react-icons/io5";
 import { BsGlobe2 } from "react-icons/bs";
 import TrentLogo from '../../components/svgs/TrentLogo';
@@ -303,7 +303,8 @@ export default async function Home({
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 m-4'>
             {
               project_config.map((project, index) => {
-                console.log({ "project": projectsArray, "config": project }); return (
+                // console.log({ "project": projectsArray, "config": project }); 
+                return (
                   <div key={projectsArray[index].heading} className='flex h-full'>
                     <ProjectCard {...project} {...projectsArray[index]} />
                   </div>

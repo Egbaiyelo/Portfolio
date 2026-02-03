@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import "../globals.css";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
@@ -52,6 +53,7 @@ export default async function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   );

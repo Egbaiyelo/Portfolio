@@ -1,9 +1,12 @@
 // move to composition.tsx
 
+// "use client";
 
 import LocaleSwitcher from "./LocaleSwitcher";
 import { getTranslations } from 'next-intl/server';
 import { Link } from "@/i18n/navigation";
+import { sendGAEvent } from '@next/third-parties/google';
+import { GAWrapper } from "./GAWrappers";
 
 
 export default async function Nav() {
@@ -42,9 +45,11 @@ export default async function Nav() {
             </div>
 
             {/* contact button */}
-            <a href="#footer" className="px-4 py-2 bg-blue-500 text-white rounded">
-                {t("contact-me")}
-            </a>
+            <GAWrapper event="buttonClicked" value="contact_me">
+                <a href="#footer" className="px-4 py-2 bg-blue-500 text-white rounded">
+                    {t("contact-me")}
+                </a>
+            </GAWrapper>
         </nav>
     );
 }

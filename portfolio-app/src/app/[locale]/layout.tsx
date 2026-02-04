@@ -2,17 +2,16 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 import { setRequestLocale } from 'next-intl/server';
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
-import "../globals.css";
-import { GoogleAnalytics } from '@next/third-parties/google';
-
 import { getMessages } from 'next-intl/server';
-import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 
+import "../globals.css";
+import { routing } from '@/i18n/routing';
+
+import { GoogleAnalytics } from '@next/third-parties/google';
 import CookieBanner from '../../components/cookiesBanner';
 
 const geistSans = Geist({
@@ -33,6 +32,7 @@ export const metadata: Metadata = {
 export function generateStaticParams() {
   return routing.locales.map((locale: string) => ({ locale }));
 }
+
 
 export default async function RootLayout({
   children,
@@ -55,10 +55,9 @@ export default async function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
         <CookieBanner gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
       </body>
     </html>
   );
 }
-
-// null commit 

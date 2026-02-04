@@ -2,17 +2,21 @@
 
 import { sendGAEvent } from '@next/third-parties/google';
 // import { div } from 'framer-motion/client';
-import { PropsWithChildren } from 'react'
 
 interface GAWrapperProps {
-  children: React.ReactNode;
-  event?: string; 
-  value?: string;
+    children: React.ReactNode;
+    event?: string;
+    value?: string;
 }
 
 export function GAWrapper({ children, event, value }: GAWrapperProps) {
     const handleClick = () => {
-        sendGAEvent({ event: {event}, value: {value} });
+        if (typeof window === "undefined" || !("gtag" in window)) return;
+        sendGAEvent({
+            event: event ?? "interaction", 
+            event_category: "navigation",
+            event_label: value
+        });
     };
 
     return (

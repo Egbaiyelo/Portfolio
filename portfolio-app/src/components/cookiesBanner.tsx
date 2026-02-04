@@ -8,21 +8,39 @@ export default function CookieBanner({ gaId }: { gaId: string }) {
     useEffect(() => {
         const storedConsent = localStorage.getItem("cookie_consent");
         setConsent(storedConsent);
+
+        if (storedConsent === "granted") {
+            window.gtag?.("consent", "update", {
+                analytics_storage: "granted"
+            });
+        }
     }, []);
 
-    if (consent === "granted") return <GoogleAnalytics gaId={gaId} />;
-    if (consent === "denied") return null;
+    if (consent === "granted") return null;
+    // if (consent === "denied") return null;
 
     return (
         <div className="fixed bottom-0 p-4 bg-slate-900 text-white flex gap-4 w-full items-center justify-center">
             <p className="">I use cookies to check site analytics and subsequently improve your experience. Please accept</p>
             <button className="bg-transparent text-gray-300 px-4 py-2 rounded hover:bg-gray-800 transition"
-                onClick={() => { localStorage.setItem("cookie_consent", "granted"); setConsent("granted"); }}
+                onClick={() => {
+                    localStorage.setItem("cookie_consent", "granted");
+                    window.gtag?.("consent", "update", {
+                        analytics_storage: "granted"
+                    });
+                    setConsent("granted");
+                }}
             >
                 Accept
             </button>
             <button
-                onClick={() => { localStorage.setItem("cookie_consent", "denied"); setConsent("denied"); }}
+                onClick={() => {
+                    localStorage.setItem("cookie_consent", "denied");
+                    window.gtag?.("consent", "update", {
+                        analytics_storage: "denied"
+                    });
+                    setConsent("denied");
+                }}
                 className="bg-transparent text-gray-300 px-4 py-2 rounded hover:bg-gray-800 transition"
             >
                 Decline

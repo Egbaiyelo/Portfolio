@@ -12,7 +12,7 @@ export default async function AboutPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations('About');
+  const t = await getTranslations('about');
 
   return (
     <div>

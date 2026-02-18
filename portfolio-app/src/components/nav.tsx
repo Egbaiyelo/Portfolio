@@ -43,7 +43,7 @@ export default async function Nav() {
             </ul>
 
             {/* localeswitcher */}
-            <div className="px-4">
+            <div className="px-4 mr-6">
                 <LocaleSwitcher />
             </div>
 

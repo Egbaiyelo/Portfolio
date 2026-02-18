@@ -60,8 +60,8 @@
                 "description": "Développement de microservices modulaires (compression, traitement de fichiers) exposés via des API REST et conteneurisation de la logique de traitement pour un déploiement évolutif."
             },
             {
-                "heading": "Extension de données navigateur",
-                "description": "Une extension pour suivre les onglets du navigateur avec des informations clés comme le nombre de fenêtres et les onglets inactifs."
+                "heading": "MyWorklog",
+                "description": "Une extension pour mettre en cache et suivre vos candidatures sur portails de recrutement Workday, agissant comme un tableau de bord pour le site."
             },
             {
                 "heading": "Portfolio",

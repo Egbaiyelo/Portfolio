@@ -60,8 +60,8 @@
                 "description": "Developed modular microservices (compression, file processing) exposed via REST APIs and containerized complex file-processing logic for scalable deployment with a unified React frontend"
             },
             {
-                "heading": "Browser-data extension",
-                "description": "An extension to track tabs on the browser with key insights like number of windows and inactive tabs"
+                "heading": "MyWorklog",
+                "description": "An extension to cache and help track job applications on Workday portals, acting as a dashboard for the site."
             },
             {
                 "heading": "Portfolio",

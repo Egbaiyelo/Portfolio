@@ -9,15 +9,22 @@ export default function CookieBanner({ gaId }: { gaId: string }) {
         const storedConsent = localStorage.getItem("cookie_consent");
         setConsent(storedConsent);
 
-        if (storedConsent === "granted") {
+        if (!storedConsent) {
+            window.gtag?.("consent", "default", {
+                analytics_storage: "denied",
+                ad_storage: "denied",
+                wait_for_update: 500,
+            });
+        } else {
+            setConsent(storedConsent);
             window.gtag?.("consent", "update", {
-                analytics_storage: "granted"
+                analytics_storage: storedConsent,
             });
         }
     }, []);
 
-    if (consent === "granted") return null;
-    // if (consent === "denied") return null;
+    // Unless an option is present
+    if (consent !== null) return null;
 
     return (
         <div className="fixed bottom-0 p-4 bg-slate-900 text-white flex gap-4 w-full items-center justify-center">
@@ -33,7 +40,7 @@ export default function CookieBanner({ gaId }: { gaId: string }) {
             >
                 Accept
             </button>
-            <button
+            <button className="bg-transparent text-gray-300 px-4 py-2 rounded hover:bg-gray-800 transition"
                 onClick={() => {
                     localStorage.setItem("cookie_consent", "denied");
                     window.gtag?.("consent", "update", {
@@ -41,9 +48,8 @@ export default function CookieBanner({ gaId }: { gaId: string }) {
                     });
                     setConsent("denied");
                 }}
-                className="bg-transparent text-gray-300 px-4 py-2 rounded hover:bg-gray-800 transition"
             >
-                Decline
+                Essentials only
             </button>
         </div>
     );

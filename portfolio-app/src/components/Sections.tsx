@@ -108,7 +108,7 @@ export async function ProjectCard({ icons, link, heading, description, tags, git
 
             {/* Learn more */}
             {/* //r  relative py-4 bg-[#BFC3C9]/70 hover:bg-[#A8ADB5] text-[#374151]  rounded-full transition-all duration-300 ease-in-out mt-auto flex items-center justify-center gap-3 overflow-hidden hover:shadow-lg active:scale-95 cursor-pointer    */}
-            <a href={github} className="group w-full py-2.5 bg-white text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-yellow-400 transition-colors mt-auto">
+            <a target='_blank' href={github} className="group w-full py-2.5 bg-white text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-yellow-400 transition-colors mt-auto">
                 <SiGithub size={30} className="transition-transform duration-300 group-hover:rotate-15" />
                 <p className='tracking-wide'>GitHub</p>
             </a>

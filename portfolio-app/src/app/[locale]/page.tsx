@@ -101,7 +101,7 @@ export default async function Home({
     {
       id: 1, icons: [IoExtensionPuzzle], link: '',
       tags: ["extension", "chromeapis", "js"],
-      github: 'https://github.com/egbaiyelo/Browser-data-extensions'
+      github: 'https://github.com/egbaiyelo/MyWorklog'
     },
     {
       id: 2, icons: [IoExtensionPuzzle, BsGlobe2], link: '',
